@@ -59,8 +59,8 @@ window.SUPA_CONFIG = { url: "https://hwodtlumxukifaogrwqw.supabase.co", anonKey:
   .chk{width:18px;height:18px;accent-color:var(--brand)}
   .del{color:var(--critical);border:none;background:transparent;font-size:15px;padding:2px 6px;cursor:pointer}
   tfoot td{font-weight:700;background:var(--surface-1);border-top:2px solid var(--baseline);position:sticky;bottom:0}
-  .bar-row{display:grid;grid-template-columns:minmax(220px,320px) 300px 1fr;align-items:center;gap:12px;margin:7px 0}
-  .bar-row .nm{font-size:12px;color:var(--text-secondary);text-align:left;line-height:1.35;word-break:break-word}
+  .bar-row{display:grid;grid-template-columns:minmax(0,1fr) 300px 56px;align-items:center;gap:12px;margin:7px 0}
+  .bar-row .nm{font-size:12px;color:var(--text-secondary);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .bar-track{position:relative;height:20px;background:var(--surface-1);border-radius:5px;overflow:hidden}
   .bar-fill{position:absolute;top:0;bottom:0;left:0;border-radius:5px;background:var(--pos)} .bar-fill.neg{background:var(--neg)}
   .bar-val{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
@@ -69,7 +69,7 @@ window.SUPA_CONFIG = { url: "https://hwodtlumxukifaogrwqw.supabase.co", anonKey:
   .note{font-size:12px;color:var(--muted);margin:8px 0 0;line-height:1.6} a{color:var(--brand)} .link-ico{text-decoration:none;font-size:14px}
   .calcbox{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end} .cbm-out{font-size:15px;font-weight:700;color:var(--brand)}
   .banner{background:color-mix(in srgb,var(--brand) 8%,transparent);border:1px solid var(--border);border-radius:10px;padding:10px 14px;font-size:12.5px;color:var(--text-secondary);margin-bottom:14px;line-height:1.6}
-  @media (max-width:640px){.bar-row{grid-template-columns:minmax(120px,1.3fr) minmax(0,1.4fr) 52px;gap:8px}body{padding:12px}}
+  @media (max-width:640px){.bar-row{grid-template-columns:minmax(0,1fr) 90px 44px;gap:8px}body{padding:12px}}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
