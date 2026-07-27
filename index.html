@@ -59,8 +59,8 @@ window.SUPA_CONFIG = { url: "https://hwodtlumxukifaogrwqw.supabase.co", anonKey:
   .chk{width:18px;height:18px;accent-color:var(--brand)}
   .del{color:var(--critical);border:none;background:transparent;font-size:15px;padding:2px 6px;cursor:pointer}
   tfoot td{font-weight:700;background:var(--surface-1);border-top:2px solid var(--baseline);position:sticky;bottom:0}
-  .bar-row{display:grid;grid-template-columns:minmax(240px,300px) minmax(0,340px) 74px;align-items:center;gap:10px;margin:7px 0}
-  .bar-row .nm{font-size:12px;color:var(--text-secondary);text-align:right;line-height:1.35;word-break:break-word}
+  .bar-row{display:grid;grid-template-columns:minmax(220px,320px) 300px 1fr;align-items:center;gap:12px;margin:7px 0}
+  .bar-row .nm{font-size:12px;color:var(--text-secondary);text-align:left;line-height:1.35;word-break:break-word}
   .bar-track{position:relative;height:20px;background:var(--surface-1);border-radius:5px;overflow:hidden}
   .bar-fill{position:absolute;top:0;bottom:0;left:0;border-radius:5px;background:var(--pos)} .bar-fill.neg{background:var(--neg)}
   .bar-val{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
@@ -69,7 +69,7 @@ window.SUPA_CONFIG = { url: "https://hwodtlumxukifaogrwqw.supabase.co", anonKey:
   .note{font-size:12px;color:var(--muted);margin:8px 0 0;line-height:1.6} a{color:var(--brand)} .link-ico{text-decoration:none;font-size:14px}
   .calcbox{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end} .cbm-out{font-size:15px;font-weight:700;color:var(--brand)}
   .banner{background:color-mix(in srgb,var(--brand) 8%,transparent);border:1px solid var(--border);border-radius:10px;padding:10px 14px;font-size:12.5px;color:var(--text-secondary);margin-bottom:14px;line-height:1.6}
-  @media (max-width:640px){.bar-row{grid-template-columns:minmax(130px,1.2fr) minmax(0,1fr) 56px}body{padding:12px}}
+  @media (max-width:640px){.bar-row{grid-template-columns:minmax(120px,1.3fr) minmax(0,1.4fr) 52px;gap:8px}body{padding:12px}}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
@@ -365,6 +365,10 @@ $('#exportCsv').addEventListener('click',()=>{const head="제품명,한글명,�
   const blob=new Blob(["﻿"+head+"\n"+body],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='ramyun_margin_box.csv';a.click();});
 $('#saveJson').addEventListener('click',()=>{const payload=JSON.stringify({savedAt:new Date().toISOString(),settings:{exRate:S.exRate(),vat:S.vat(),shipCbm:S.shipCbm(),cardDef:S.cardDef()},rows},null,2);const blob=new Blob([payload],{type:'application/json;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);const d=new Date(),p=n=>String(n).padStart(2,'0');a.download='마진계산_데이터_'+d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+'_'+p(d.getHours())+p(d.getMinutes())+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);});
 
+/* ===== 시리즈(스냅샷) 상태 직렬화 헬퍼 — 클라우드 계층에서 사용 ===== */
+window.__getState=function(){return {settings:{exRate:S.exRate(),vat:S.vat(),shipCbm:S.shipCbm(),cardDef:S.cardDef()},rows:rows};};
+window.__setState=function(o){try{return restoreJSON(JSON.stringify(o),true);}catch(e){return false;}};
+
 /* ===== 수출 서류(Invoice/Packing List) 모듈 ===== */
 function $x(id){return document.getElementById(id);}
 let shipItems=[];
@@ -474,13 +478,64 @@ render();
   function topbar(){
     var t=document.createElement('div');
     t.id='userBar';
-    t.style.cssText='position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:6px 12px;background:#161615;color:#fff;font:12px system-ui';
-    t.innerHTML='<button id="ub_seed" style="display:none;padding:4px 10px;border:1px solid #6a5;border-radius:7px;background:#1f3a1f;color:#cfc;cursor:pointer">🗂 마스터 시드</button>'
+    t.style.cssText='position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:6px 12px;background:#161615;color:#fff;font:12px system-ui;flex-wrap:wrap';
+    t.innerHTML='<div style="margin-right:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap">'
+      +'<span style="opacity:.7">📚 시리즈</span>'
+      +'<select id="ub_series" style="padding:4px 6px;border:1px solid #555;border-radius:7px;background:#2a2a28;color:#fff;max-width:220px"><option value="">— 저장된 시리즈 —</option></select>'
+      +'<button id="ub_sload" style="padding:4px 9px;border:1px solid #557;border-radius:7px;background:#242433;color:#cdf;cursor:pointer">📂 불러오기</button>'
+      +'<button id="ub_sdel" title="선택한 시리즈 삭제" style="padding:4px 8px;border:1px solid #755;border-radius:7px;background:#331f1f;color:#fcc;cursor:pointer">🗑</button>'
+      +'<input id="ub_sname" placeholder="새 시리즈 이름" style="padding:4px 8px;border:1px solid #555;border-radius:7px;background:#2a2a28;color:#fff;width:140px">'
+      +'<button id="ub_ssave" style="padding:4px 9px;border:1px solid #5a5;border-radius:7px;background:#1f3a1f;color:#cfc;cursor:pointer">💾 저장</button>'
+      +'<span id="ub_smsg" style="opacity:.9;color:#9ec"></span>'
+      +'</div>'
+      +'<button id="ub_seed" style="display:none;padding:4px 10px;border:1px solid #6a5;border-radius:7px;background:#1f3a1f;color:#cfc;cursor:pointer">🗂 마스터 시드</button>'
       +'<span id="ub_role"></span><span id="ub_email" style="opacity:.8"></span>'
       +'<button id="ub_logout" style="padding:4px 10px;border:1px solid #555;border-radius:7px;background:#2a2a28;color:#fff;cursor:pointer">로그아웃</button>';
     document.body.insertBefore(t, document.body.firstChild);
     $('#ub_logout').onclick=function(){ sb.auth.signOut(); };
     $('#ub_seed').onclick=seedMaster;
+    $('#ub_ssave').onclick=function(){var nm=($('#ub_sname').value||'').trim();if(!nm){smsg('시리즈 이름을 입력하세요');$('#ub_sname').focus();return;}saveSeries(nm);};
+    $('#ub_sload').onclick=function(){var id=$('#ub_series').value;if(!id){smsg('불러올 시리즈를 선택하세요');return;}loadSeries(id);};
+    $('#ub_sdel').onclick=function(){var sel=$('#ub_series'),id=sel.value;if(!id){smsg('삭제할 시리즈를 선택하세요');return;}deleteSeries(id,sel.options[sel.selectedIndex].textContent);};
+    $('#ub_sname').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('#ub_ssave').click();}});
+  }
+
+  // ---------- 시리즈(스냅샷) 저장/불러오기 (사용자별) ----------
+  function smsg(t){var m=$('#ub_smsg');if(m){m.textContent=t||'';if(t)setTimeout(function(){if(m.textContent===t)m.textContent='';},4000);}}
+  function loadSeriesList(keep){
+    return sb.from('snapshots').select('id,name,updated_at').order('updated_at',{ascending:false}).then(function(r){
+      var box=$('#ub_series');if(!box)return;
+      var cur=(keep!=null)?keep:box.value;
+      var opts='<option value="">— 저장된 시리즈 —</option>';
+      (r.data||[]).forEach(function(s){opts+='<option value="'+s.id+'">'+String(s.name).replace(/</g,'&lt;')+'</option>';});
+      box.innerHTML=opts; if(cur)box.value=cur;
+    });
+  }
+  function saveSeries(name){
+    if(!ME){smsg('로그인이 필요합니다');return;}
+    var state=window.__getState?window.__getState():null;
+    if(!state){smsg('현재 상태를 읽지 못했습니다');return;}
+    smsg('저장 중...');
+    sb.from('snapshots').upsert({user_id:ME.id,name:name,data:state,updated_at:new Date().toISOString()},{onConflict:'user_id,name'}).then(function(r){
+      if(r.error){smsg('저장 실패: '+r.error.message);return;}
+      $('#ub_sname').value='';
+      loadSeriesList().then(function(){var box=$('#ub_series');if(box){for(var i=0;i<box.options.length;i++){if(box.options[i].textContent===name){box.selectedIndex=i;break;}}}smsg('저장됨: '+name);});
+    });
+  }
+  function loadSeries(id){
+    smsg('불러오는 중...');
+    sb.from('snapshots').select('name,data').eq('id',id).maybeSingle().then(function(r){
+      if(r.error||!r.data){smsg('불러오기 실패');return;}
+      var ok=window.__setState?window.__setState(r.data.data):false;
+      smsg(ok?('불러옴: '+r.data.name):'복원 실패');
+    });
+  }
+  function deleteSeries(id,name){
+    if(!confirm('시리즈 "'+name+'" 를 삭제할까요?'))return;
+    sb.from('snapshots').delete().eq('id',id).then(function(r){
+      if(r.error){smsg('삭제 실패: '+r.error.message);return;}
+      loadSeriesList('').then(function(){smsg('삭제됨: '+name);});
+    });
   }
   function seedMaster(){
     if(ROLE!=='admin'){alert('관리자만 실행할 수 있습니다.');return;}
@@ -615,6 +670,7 @@ render();
     if(!$('#userBar')) topbar();
     hookSaves();
     loadAll();
+    loadSeriesList('');
   }
   function onSignedOut(){ ME=null; ov.style.display='flex'; var ub=$('#userBar'); if(ub) ub.remove(); }
 
