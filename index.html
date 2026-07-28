@@ -141,10 +141,11 @@ window.SUPA_CONFIG = { url: "https://hwodtlumxukifaogrwqw.supabase.co", anonKey:
 
 <div class="tablewrap"><table id="tbl"><thead><tr>
   <th class="l" data-sort="name">제품명</th>
-  <th data-sort="vendor">거래처</th>
+  <th data-sort="vendor">필리핀 공급사</th>
   <th data-sort="perBox">입수<br><span style="font-weight:400">(개/박스)</span></th>
   <th data-sort="phCost">필리핀 매입가<br><span style="font-weight:400">(PHP/박스)</span></th>
   <th data-sort="krPrice">한국 판매가<br><span style="font-weight:400">(KRW/박스·입력)</span></th>
+  <th data-sort="krVendor">한국 공급사<br><span style="font-weight:400">(직수출 시 입력)</span></th>
   <th data-sort="cardPct">카드할인<br><span style="font-weight:400">(%)</span></th>
   <th data-sort="vatRefund">부가세<br>환급</th>
   <th data-sort="cbm">부피<br><span style="font-weight:400">(CBM/박스)</span></th>
@@ -260,7 +261,7 @@ let sortKey=null,sortDir=-1,filter="",catF="";
 const S={exRate:()=>parseFloat($('#exRate').value)||0,vat:()=>parseFloat($('#vatRate').value)||0,shipCbm:()=>parseFloat($('#shipCbm').value)||0,cardDef:()=>parseFloat($('#cardDef').value)||0,vatDef:()=>$('#vatDef').value==='1'};
 function perBoxFromName(nm){nm=String(nm||'');let m=nm.match(/(?:^|[^0-9A-Za-z])(\d{1,2})[xX](\d{1,3})(?![0-9A-Za-z])/);if(m)return parseInt(m[1])*parseInt(m[2]);let xs=nm.match(/[xX]\s*(\d{1,3})/g);if(xs){let last=xs[xs.length-1].match(/(\d{1,3})/);if(last)return parseInt(last[1]);}let s=nm.match(/(?:^|[^0-9A-Za-z])(\d{1,2})\s*\/\s*(\d{1,2})(?![0-9A-Za-z])/);if(s)return parseInt(s[1])*parseInt(s[2]);return 1;}
 function calc(r){const ex=S.exRate(),vat=S.vat(),ship=S.shipCbm();const shipKRW=(r.cbm||0)*ship;const entered=(r.krPrice||0)>0;if(!entered)return{entered:false,shipKRW,landedPHP:null,savePHP:null,savePct:null,vatAmt:0};const paid=r.krPrice*(1-(r.cardPct||0)/100);const netKRW=r.vatRefund?paid/(1+vat/100):paid;const landedPHP=(ex>0?(netKRW+shipKRW)/ex:0)+(r.phLocal||0);const savePHP=r.phCost-landedPHP;const savePct=r.phCost>0?savePHP/r.phCost*100:0;const vatAmt=r.vatRefund?paid*(vat/(100+vat)):0;return{entered:true,shipKRW,landedPHP,savePHP,savePct,vatAmt};}
-function newRow(){return{name:"",krName:"",vendor:"",cat:"",perBox:1,phCost:0,krPrice:0,cardPct:S.cardDef(),vatRefund:S.vatDef(),cbm:0,phLocal:0,qty:1,url:""};}
+function newRow(){return{name:"",krName:"",vendor:"",cat:"",perBox:1,phCost:0,krPrice:0,krVendor:"",cardPct:S.cardDef(),vatRefund:S.vatDef(),cbm:0,phLocal:0,qty:1,url:""};}
 function escA(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
 function saveFocus(){const el=document.activeElement;if(el&&el.dataset&&el.dataset.i!=null&&el.closest('#tbody')){return{i:el.dataset.i,k:el.dataset.k};}return null;}
 function restoreFocus(f){if(!f)return;const el=$('#tbody [data-i="'+f.i+'"][data-k="'+f.k+'"]');if(el)el.focus();}
@@ -271,6 +272,7 @@ function rowHTML(r,i){const c=calc(r);const na=v=>c.entered?v:'<span class="na">
   '<td><input type="number" step="1" data-i="'+i+'" data-k="perBox" value="'+r.perBox+'"></td>'+
   '<td><input type="number" step="0.01" data-i="'+i+'" data-k="phCost" value="'+r.phCost+'"></td>'+
   '<td><input class="kr" type="number" step="1" data-i="'+i+'" data-k="krPrice" value="'+(r.krPrice||'')+'" placeholder="박스가 입력"></td>'+
+  '<td><input class="krvendor" data-i="'+i+'" data-k="krVendor" value="'+escA(r.krVendor||'')+'" placeholder="직수출 시" style="width:80px"></td>'+
   '<td><input type="number" step="0.1" data-i="'+i+'" data-k="cardPct" value="'+r.cardPct+'"></td>'+
   '<td><input type="checkbox" class="chk" data-i="'+i+'" data-k="vatRefund" '+(r.vatRefund?'checked':'')+'></td>'+
   '<td><input type="number" step="0.0001" data-i="'+i+'" data-k="cbm" value="'+r.cbm+'"></td>'+
@@ -297,7 +299,7 @@ function updateCalc(tr,i){const r=rows[i],c=calc(r);const pn=v=>v>=0?'pos':'neg'
   const pc=tr.querySelector('.c-pct');if(c.entered){pc.textContent=(c.savePct>=0?'+':'')+fmt(c.savePct,1)+'%';pc.className='calc c-pct '+pn(c.savePct);}else{pc.innerHTML='<span class="na">–</span>';pc.className='calc c-pct';}
   renderFoot();renderTiles();renderChart();}
 function totals(){let ph=0,ld=0,vat=0,sh=0,qty=0,qtyEnt=0,ent=0;for(const r of rows){const c=calc(r);const q=r.qty||0;qty+=q;if(!c.entered)continue;ent++;qtyEnt+=q;ph+=r.phCost*q;ld+=c.landedPHP*q;vat+=c.vatAmt*q;sh+=c.shipKRW*q;}const save=ph-ld,pct=ph>0?save/ph*100:0;return{ph,ld,save,pct,vat,sh,qty,qtyEnt,ent};}
-function renderFoot(){const t=totals();$('#tfoot').innerHTML='<tr><td class="l">합계 (가격입력분·박스수 가중)</td><td>—</td><td>—</td><td>'+fmt(t.ph,0)+'</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>'+fmt(t.qtyEnt,0)+'</td><td>'+fmt(t.sh,0)+'</td><td>'+fmt(t.ld,0)+'</td><td class="'+(t.save>=0?'pos':'neg')+'">'+(t.save>=0?'+':'')+fmt(t.save,0)+'</td><td class="'+(t.save>=0?'pos':'neg')+'">'+(t.save>=0?'+':'')+fmt(t.save*S.exRate(),0)+'</td><td class="'+(t.pct>=0?'pos':'neg')+'">'+(t.pct>=0?'+':'')+fmt(t.pct,1)+'%</td><td></td></tr>';}
+function renderFoot(){const t=totals();$('#tfoot').innerHTML='<tr><td class="l">합계 (가격입력분·박스수 가중)</td><td>—</td><td>—</td><td>'+fmt(t.ph,0)+'</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>'+fmt(t.qtyEnt,0)+'</td><td>'+fmt(t.sh,0)+'</td><td>'+fmt(t.ld,0)+'</td><td class="'+(t.save>=0?'pos':'neg')+'">'+(t.save>=0?'+':'')+fmt(t.save,0)+'</td><td class="'+(t.save>=0?'pos':'neg')+'">'+(t.save>=0?'+':'')+fmt(t.save*S.exRate(),0)+'</td><td class="'+(t.pct>=0?'pos':'neg')+'">'+(t.pct>=0?'+':'')+fmt(t.pct,1)+'%</td><td></td></tr>';}
 function renderTiles(){const t=totals();const T=[
   {k:"제품 수",v:fmt(rows.length),u:"품목 (라면·음료 상위30%)",c:""},
   {k:"한국가 입력",v:t.ent+" / "+rows.length,u:"입력 완료",c:t.ent>0?'pos':''},
@@ -320,6 +322,7 @@ $('#tbody').addEventListener('input',e=>{const el=e.target,i=+el.dataset.i,k=el.
   if(k==='name'){rows[i].name=el.value;return;}
   if(k==='krName'){rows[i].krName=el.value;return;}
   if(k==='vendor'){rows[i].vendor=el.value;return;}
+  if(k==='krVendor'){rows[i].krVendor=el.value;return;}
   rows[i][k]=parseFloat(el.value)||0;updateCalc(tr,i);});
 $('#tbody').addEventListener('change',e=>{const el=e.target,i=+el.dataset.i,k=el.dataset.k;if(k==='name'&&rows[i]){rows[i].perBox=perBoxFromName(rows[i].name)||rows[i].perBox;render();}});
 $('#tbody').addEventListener('click',e=>{if(e.target.dataset.del!=null){rows.splice(+e.target.dataset.del,1);render();}});
@@ -332,7 +335,7 @@ $('#np_name').addEventListener('input',e=>{const pb=$('#np_perbox');if(!pb.value
 $('#np_cancel').addEventListener('click',()=>{$('#newProdPanel').style.display='none';});
 $('#np_register').addEventListener('click',()=>{
   const name=$('#np_name').value.trim(); if(!name){alert('제품명(영문)을 입력하세요.');$('#np_name').focus();return;}
-  const nrow={name:name,krName:$('#np_kr').value.trim(),vendor:$('#np_vendor').value.trim(),cat:$('#np_cat').value,perBox:parseFloat($('#np_perbox').value)||1,phCost:parseFloat($('#np_ph').value)||0,krPrice:parseFloat($('#np_krp').value)||0,cardPct:parseFloat($('#np_card').value)||0,vatRefund:$('#np_vat').value==='1',cbm:parseFloat($('#np_cbm').value)||0,phLocal:0,qty:parseFloat($('#np_qty').value)||0};
+  const nrow={name:name,krName:$('#np_kr').value.trim(),vendor:$('#np_vendor').value.trim(),cat:$('#np_cat').value,perBox:parseFloat($('#np_perbox').value)||1,phCost:parseFloat($('#np_ph').value)||0,krPrice:parseFloat($('#np_krp').value)||0,krVendor:'',cardPct:parseFloat($('#np_card').value)||0,vatRefund:$('#np_vat').value==='1',cbm:parseFloat($('#np_cbm').value)||0,phLocal:0,qty:parseFloat($('#np_qty').value)||0};
   rows.unshift(nrow);
   DEFAULT_ROWS.unshift(JSON.parse(JSON.stringify(nrow)));saveMaster();  // 마스터에 자동 추가·저장
   sortKey=null;filter='';catF='';$('#search').value='';$('#catFilter').value='';render();
@@ -361,7 +364,7 @@ function parseCSV(text){const lines=text.trim().split(/\r?\n/).filter(l=>l.trim(
     out.push({name:nm,krName:g(p,map.kr),cat:g(p,map.cat),perBox:per,phCost:parseFloat(g(p,map.ph))||0,krPrice:parseFloat(g(p,map.krp))||0,cardPct:parseFloat(g(p,map.card))||0,vatRefund:(v=>v===''||v==null?S.vatDef():/^(1|y|yes|true|o|적용)/i.test(v))(g(p,map.vat)),cbm:parseFloat(g(p,map.cbm))||0,phLocal:parseFloat(g(p,map.loc))||0,qty:parseFloat(g(p,map.qty))||1,url:g(p,map.url)});}
   return out;}
 function restoreSettings(s){if(!s)return;if(s.exRate!=null)$('#exRate').value=s.exRate;if(s.vat!=null)$('#vatRate').value=s.vat;if(s.shipCbm!=null)$('#shipCbm').value=s.shipCbm;if(s.cardDef!=null)$('#cardDef').value=s.cardDef;$('#exHint').textContent='1 PHP = '+fmt(S.exRate(),2)+' KRW';}
-function restoreJSON(text,replace){try{const o=JSON.parse(text);let nr=null,st=null;if(o&&Array.isArray(o.rows)){nr=o.rows;st=o.settings;}else if(Array.isArray(o)){nr=o;}if(!nr)return false;nr=nr.map(x=>Object.assign({name:'',krName:'',vendor:'',cat:'',perBox:1,phCost:0,krPrice:0,cardPct:0,vatRefund:true,cbm:0,phLocal:0,qty:0},x));syncMasterFields(nr);rows=replace?nr:rows.concat(nr);restoreSettings(st);sortKey=null;filter='';catF='';$('#search').value='';$('#catFilter').value='';render();return true;}catch(e){return false;}}
+function restoreJSON(text,replace){try{const o=JSON.parse(text);let nr=null,st=null;if(o&&Array.isArray(o.rows)){nr=o.rows;st=o.settings;}else if(Array.isArray(o)){nr=o;}if(!nr)return false;nr=nr.map(x=>Object.assign({name:'',krName:'',vendor:'',cat:'',perBox:1,phCost:0,krPrice:0,krVendor:'',cardPct:0,vatRefund:true,cbm:0,phLocal:0,qty:0},x));syncMasterFields(nr);rows=replace?nr:rows.concat(nr);restoreSettings(st);sortKey=null;filter='';catF='';$('#search').value='';$('#catFilter').value='';render();return true;}catch(e){return false;}}
 /* 저장 파일·시리즈를 불러와도 필리핀 매입가·거래처(부피·입수 포함 마스터 필드)는 항상 현재 마스터(최신 공급가)로 덮어씀. 한국 판매가·수량 등 작업값은 유지 */
 function syncMasterFields(nr){try{var MB=(window.DEFAULT_ROWS&&window.DEFAULT_ROWS.length)?window.DEFAULT_ROWS:(typeof DEFAULT_ROWS!=='undefined'?DEFAULT_ROWS:[]);if(!MB||!MB.length)return;var mm={};MB.forEach(function(p){mm[p.name]=p;});nr.forEach(function(r){var p=mm[r.name];if(p){r.phCost=p.phCost;r.vendor=p.vendor;r.perBox=p.perBox;r.cbm=p.cbm;}});}catch(e){}}
 $('#loadCsv').addEventListener('click',()=>{const t=$('#csvArea').value.trim();if((t[0]==='{'||t[0]==='[')&&restoreJSON(t,false)){alert('JSON 데이터를 불러왔습니다 (기존에 추가).');return;}const r=parseCSV(t);if(r.length){rows=rows.concat(r);sortKey=null;render();}else alert('읽을 데이터가 없습니다.');});
@@ -562,12 +565,12 @@ render();
     return {name:p.name,krName:p.kr_name||'',vendor:p.vendor||'',cat:p.cat||'',perBox:+p.per_box||1,
       phCost:+p.ph_cost||0,cbm:+p.cbm||0,
       phLocal:(ov&&ov.ph_local!=null)?+ov.ph_local:(+p.ph_local||0),
-      krPrice:ov?+ov.kr_price||0:0,cardPct:ov?+ov.card_pct||0:0,
+      krPrice:ov?+ov.kr_price||0:0,krVendor:ov?ov.kr_vendor||'':'',cardPct:ov?+ov.card_pct||0:0,
       vatRefund:ov?!!ov.vat_refund:true,qty:ov?+ov.qty||0:0,_src:'master',_key:p.key};
   }
   function rowFromCustom(c){
     return {name:c.name,krName:c.kr_name||'',vendor:c.vendor||'',cat:c.cat||'',perBox:+c.per_box||1,
-      phCost:+c.ph_cost||0,cbm:+c.cbm||0,phLocal:+c.ph_local||0,krPrice:+c.kr_price||0,
+      phCost:+c.ph_cost||0,cbm:+c.cbm||0,phLocal:+c.ph_local||0,krPrice:+c.kr_price||0,krVendor:c.kr_vendor||'',
       cardPct:+c.card_pct||0,vatRefund:!!c.vat_refund,qty:+c.qty||0,_src:'custom',_id:c.id};
   }
 
@@ -625,10 +628,10 @@ render();
   function saveRow(r){
     if(!ME) return;
     if(r._src==='custom'){
-      sb.from('custom_products').update({name:r.name,kr_name:r.krName,vendor:r.vendor,cat:r.cat,per_box:r.perBox,ph_cost:r.phCost,kr_price:r.krPrice,card_pct:r.cardPct,vat_refund:!!r.vatRefund,cbm:r.cbm,ph_local:r.phLocal,qty:r.qty}).eq('id',r._id).then(function(){});
+      sb.from('custom_products').update({name:r.name,kr_name:r.krName,vendor:r.vendor,cat:r.cat,per_box:r.perBox,ph_cost:r.phCost,kr_price:r.krPrice,kr_vendor:r.krVendor||'',card_pct:r.cardPct,vat_refund:!!r.vatRefund,cbm:r.cbm,ph_local:r.phLocal,qty:r.qty}).eq('id',r._id).then(function(){});
     } else if(r._src==='master'){
       // 작업 오버레이 저장 (본인)
-      sb.from('work_overrides').upsert({user_id:ME.id,product_key:r._key,kr_price:r.krPrice,card_pct:r.cardPct,vat_refund:!!r.vatRefund,qty:r.qty,ph_local:r.phLocal,updated_at:new Date().toISOString()}).then(function(){});
+      sb.from('work_overrides').upsert({user_id:ME.id,product_key:r._key,kr_price:r.krPrice,kr_vendor:r.krVendor||'',card_pct:r.cardPct,vat_refund:!!r.vatRefund,qty:r.qty,ph_local:r.phLocal,updated_at:new Date().toISOString()}).then(function(){});
     }
   }
   function saveMasterField(r){ // 관리자만
@@ -662,7 +665,7 @@ render();
         if(ROLE==='admin'){
           sb.from('products').insert({key:r.name,name:r.name,kr_name:r.krName,vendor:r.vendor,cat:r.cat,per_box:r.perBox,ph_cost:r.phCost,cbm:r.cbm,ph_local:r.phLocal,updated_by:ME.id}).then(loadAll);
         } else {
-          sb.from('custom_products').insert({user_id:ME.id,name:r.name,kr_name:r.krName,vendor:r.vendor,cat:r.cat,per_box:r.perBox,ph_cost:r.phCost,kr_price:r.krPrice,card_pct:r.cardPct,vat_refund:!!r.vatRefund,cbm:r.cbm,ph_local:r.phLocal,qty:r.qty}).then(loadAll);
+          sb.from('custom_products').insert({user_id:ME.id,name:r.name,kr_name:r.krName,vendor:r.vendor,cat:r.cat,per_box:r.perBox,ph_cost:r.phCost,kr_price:r.krPrice,kr_vendor:r.krVendor||'',card_pct:r.cardPct,vat_refund:!!r.vatRefund,cbm:r.cbm,ph_local:r.phLocal,qty:r.qty}).then(loadAll);
         }
       },50);
     });
