@@ -342,7 +342,7 @@ $('#np_register').addEventListener('click',()=>{
 });
 $('#clearAll').addEventListener('click',()=>{if(confirm('모든 제품을 삭제할까요?')){rows=[];render();}});
 $('#resetKr').addEventListener('click',()=>{if(confirm('모든 한국 판매가 입력을 지울까요? (다른 값은 유지)')){rows.forEach(r=>r.krPrice=0);render();}});
-$('#restoreDefault').addEventListener('click',()=>{if(confirm('마스터 목록('+DEFAULT_ROWS.length+'종)을 다시 불러올까요? 현재 화면의 목록·입력값은 사라집니다. (마스터에는 그동안 등록한 신규 제품이 모두 포함돼 있습니다)')){rows=JSON.parse(JSON.stringify(DEFAULT_ROWS));sortKey=null;filter='';catF='';$('#search').value='';$('#catFilter').value='';render();}});
+$('#restoreDefault').addEventListener('click',()=>{var MB=(window.DEFAULT_ROWS&&window.DEFAULT_ROWS.length)?window.DEFAULT_ROWS:DEFAULT_ROWS;if(confirm('마스터 목록('+MB.length+'종)을 다시 불러올까요? 현재 화면의 목록·입력값은 사라집니다. (한국 판매가는 비어있는 상태로 불러옵니다)')){DEFAULT_ROWS=JSON.parse(JSON.stringify(MB));rows=JSON.parse(JSON.stringify(MB));sortKey=null;filter='';catF='';$('#search').value='';$('#catFilter').value='';render();}});
 $('#saveMasterBtn').addEventListener('click',()=>{if(confirm('현재 화면의 '+rows.length+'종을 마스터로 저장할까요? 이후 "마스터 복원" 시 이 목록이 기준이 됩니다.')){DEFAULT_ROWS=JSON.parse(JSON.stringify(rows));saveMaster();alert('마스터로 저장했습니다 ('+DEFAULT_ROWS.length+'종). 이 브라우저에 보관됩니다.');}});
 document.querySelectorAll('th[data-sort]').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.sort;if(sortKey===k)sortDir*=-1;else{sortKey=k;sortDir=-1;}render();}));
 $('#themeBtn').addEventListener('click',()=>{const c=document.documentElement.getAttribute('data-theme');document.documentElement.setAttribute('data-theme',c==='dark'?'light':'dark');});
