@@ -52,6 +52,9 @@ window.SUPA_CONFIG = { url: "https://hwodtlumxukifaogrwqw.supabase.co", anonKey:
   td input.name{display:block;text-align:left;min-width:360px;width:360px;font-weight:600}
   td input.krname{display:block;margin-top:2px;text-align:left;min-width:360px;width:360px;font-size:11.5px;font-weight:500;color:var(--text-secondary)}
   td input.kr{font-weight:700;color:var(--brand);background:color-mix(in srgb,var(--brand) 6%,transparent);border-color:var(--border)}
+  td input.krvendor{text-align:left;min-width:84px;border:1px solid var(--border);background:var(--surface-1);color:var(--text-primary);border-style:dashed}
+  td input.krvendor::placeholder{color:var(--text-secondary);opacity:.7}
+  td input.krvendor:not(:placeholder-shown){border-style:solid;background:color-mix(in srgb,var(--brand) 5%,transparent);font-weight:600}
   td input.url{text-align:left;min-width:60px;color:var(--text-secondary)}
   td input:hover{border-color:var(--grid)} td input:focus{border-color:var(--brand);background:var(--surface-1)}
   td.calc{font-weight:600} td.calc.sub{color:var(--text-secondary);font-weight:500}
