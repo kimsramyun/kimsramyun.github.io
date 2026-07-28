@@ -369,7 +369,7 @@ function parseCSV(text){const lines=text.trim().split(/\r?\n/).filter(l=>l.trim(
 function restoreSettings(s){if(!s)return;if(s.exRate!=null)$('#exRate').value=s.exRate;if(s.vat!=null)$('#vatRate').value=s.vat;if(s.shipCbm!=null)$('#shipCbm').value=s.shipCbm;if(s.cardDef!=null)$('#cardDef').value=s.cardDef;$('#exHint').textContent='1 PHP = '+fmt(S.exRate(),2)+' KRW';}
 function restoreJSON(text,replace){try{const o=JSON.parse(text);let nr=null,st=null;if(o&&Array.isArray(o.rows)){nr=o.rows;st=o.settings;}else if(Array.isArray(o)){nr=o;}if(!nr)return false;nr=nr.map(x=>Object.assign({name:'',krName:'',vendor:'',cat:'',perBox:1,phCost:0,krPrice:0,krVendor:'',cardPct:0,vatRefund:true,cbm:0,phLocal:0,qty:0},x));syncMasterFields(nr);rows=replace?nr:rows.concat(nr);restoreSettings(st);sortKey=null;filter='';catF='';$('#search').value='';$('#catFilter').value='';render();return true;}catch(e){return false;}}
 /* 저장 파일·시리즈를 불러와도 필리핀 매입가·거래처(부피·입수 포함 마스터 필드)는 항상 현재 마스터(최신 공급가)로 덮어씀. 한국 판매가·수량 등 작업값은 유지 */
-function syncMasterFields(nr){try{var MB=(window.DEFAULT_ROWS&&window.DEFAULT_ROWS.length)?window.DEFAULT_ROWS:(typeof DEFAULT_ROWS!=='undefined'?DEFAULT_ROWS:[]);if(!MB||!MB.length)return;var mm={};MB.forEach(function(p){mm[p.name]=p;});nr.forEach(function(r){var p=mm[r.name];if(p){r.phCost=p.phCost;r.vendor=p.vendor;r.perBox=p.perBox;r.cbm=p.cbm;}});}catch(e){}}
+function syncMasterFields(nr){try{var MB=(window.DEFAULT_ROWS&&window.DEFAULT_ROWS.length)?window.DEFAULT_ROWS:(typeof DEFAULT_ROWS!=='undefined'?DEFAULT_ROWS:[]);if(!MB||!MB.length)return;var mm={};MB.forEach(function(p){mm[p.name]=p;});nr.forEach(function(r){var p=mm[r.name];if(p){r.phCost=p.phCost;r.vendor=p.vendor;r.krVendor=p.krVendor;r.perBox=p.perBox;r.cbm=p.cbm;}});}catch(e){}}
 $('#loadCsv').addEventListener('click',()=>{const t=$('#csvArea').value.trim();if((t[0]==='{'||t[0]==='[')&&restoreJSON(t,false)){alert('JSON 데이터를 불러왔습니다 (기존에 추가).');return;}const r=parseCSV(t);if(r.length){rows=rows.concat(r);sortKey=null;render();}else alert('읽을 데이터가 없습니다.');});
 $('#replaceCsv').addEventListener('click',()=>{const t=$('#csvArea').value.trim();if((t[0]==='{'||t[0]==='[')&&restoreJSON(t,true)){alert('JSON 데이터를 불러왔습니다 (기존 대체).');return;}const r=parseCSV(t);if(r.length){rows=r;sortKey=null;render();}else alert('읽을 데이터가 없습니다.');});
 $('#fileInput').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{const txt=rd.result;const isJson=f.name.toLowerCase().endsWith('.json')||/^\s*[\[{]/.test(txt);if(isJson){if(restoreJSON(txt,true)){$('#importPanel').open=false;alert('데이터를 불러왔습니다.');}else alert('JSON을 읽지 못했습니다. 형식을 확인하세요.');}else{$('#csvArea').value=txt;$('#importPanel').open=true;alert('CSV를 불러왔습니다. 아래 "불러오기" 버튼을 누르세요.');}e.target.value='';};rd.readAsText(f,'utf-8');});
@@ -554,7 +554,7 @@ render();
     if(ROLE!=='admin'){alert('관리자만 실행할 수 있습니다.');return;}
     if(!confirm('상품 마스터를 products.json 기준으로 일괄 등록/갱신할까요? (기존 항목은 덮어씀)'))return;
     fetch('./products.json').then(function(r){return r.json();}).then(function(list){
-      var rows=list.map(function(p,i){return {key:p.name,name:p.name,kr_name:p.krName||'',vendor:p.vendor||'',cat:p.cat||'',per_box:p.perBox||1,ph_cost:p.phCost||0,cbm:p.cbm||0,ph_local:p.phLocal||0,sort:i+1,updated_by:ME.id};});
+      var rows=list.map(function(p,i){return {key:p.name,name:p.name,kr_name:p.krName||'',vendor:p.vendor||'',kr_vendor:p.krVendor||'',cat:p.cat||'',per_box:p.perBox||1,ph_cost:p.phCost||0,cbm:p.cbm||0,ph_local:p.phLocal||0,sort:i+1,updated_by:ME.id};});
       // 500개씩 나눠 upsert
       var chunks=[],i=0; while(i<rows.length){chunks.push(rows.slice(i,i+200));i+=200;}
       (function next(k){ if(k>=chunks.length){alert('마스터 시드 완료: '+rows.length+'개');loadAll();return;}
@@ -568,7 +568,7 @@ render();
     return {name:p.name,krName:p.kr_name||'',vendor:p.vendor||'',cat:p.cat||'',perBox:+p.per_box||1,
       phCost:+p.ph_cost||0,cbm:+p.cbm||0,
       phLocal:(ov&&ov.ph_local!=null)?+ov.ph_local:(+p.ph_local||0),
-      krPrice:ov?+ov.kr_price||0:0,krVendor:ov?ov.kr_vendor||'':'',cardPct:ov?+ov.card_pct||0:0,
+      krPrice:ov?+ov.kr_price||0:0,krVendor:p.kr_vendor||'',cardPct:ov?+ov.card_pct||0:0,
       vatRefund:ov?!!ov.vat_refund:true,qty:ov?+ov.qty||0:0,_src:'master',_key:p.key};
   }
   function rowFromCustom(c){
@@ -606,7 +606,7 @@ render();
   }
 
   // 권한: 일반 사용자는 마스터 필드(제품명·거래처·입수·필리핀매입가·부피) 편집 잠금
-  var MASTER_FIELDS=['name','krName','vendor','cat','perBox','phCost','cbm'];
+  var MASTER_FIELDS=['name','krName','vendor','krVendor','cat','perBox','phCost','cbm'];
   function applyRole(){
     if(ROLE==='admin') return;
     document.querySelectorAll('#tbody tr').forEach(function(tr){
@@ -639,7 +639,7 @@ render();
   }
   function saveMasterField(r){ // 관리자만
     if(ROLE!=='admin'||r._src!=='master') return;
-    sb.from('products').update({name:r.name,kr_name:r.krName,vendor:r.vendor,cat:r.cat,per_box:r.perBox,ph_cost:r.phCost,cbm:r.cbm,updated_by:ME.id,updated_at:new Date().toISOString()}).eq('key',r._key).then(function(){});
+    sb.from('products').update({name:r.name,kr_name:r.krName,vendor:r.vendor,kr_vendor:r.krVendor||'',cat:r.cat,per_box:r.perBox,ph_cost:r.phCost,cbm:r.cbm,updated_by:ME.id,updated_at:new Date().toISOString()}).eq('key',r._key).then(function(){});
   }
 
   function hookSaves(){
