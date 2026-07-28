@@ -211,7 +211,7 @@
 },
 {
 "name": "NONGSHIM SHIN RAMYUN STIR-FRY MULTI PACK 131G 4/8",
-"krName": "농심 신라면 볶음면 131g",
+"krName": "농심 신라면 볶음면 131g x32",
 "vendor": "쿠팡",
 "cat": "RAMYUN (STIR FRIED)",
 "perBox": 32,
@@ -241,7 +241,7 @@
 },
 {
 "name": "SAMYANG BULDAK ROSE MULTI 140g x 40 / 140g x 32",
-"krName": "삼양 로제불닭볶음면 140g",
+"krName": "삼양 로제불닭볶음면 140g x40",
 "vendor": "테라파인",
 "cat": "RAMYUN (STIR FRIED)",
 "perBox": 32,
@@ -271,7 +271,7 @@
 },
 {
 "name": "SAMYANG BULDAK QUATTRO CHEESE MULTI 140g x 40 / 145 x 32",
-"krName": "삼양 콰트로치즈불닭볶음면 140g",
+"krName": "삼양 콰트로치즈불닭볶음면 140g x40",
 "vendor": "테라파인",
 "cat": "RAMYUN (STIR FRIED)",
 "perBox": 32,
@@ -281,7 +281,7 @@
 },
 {
 "name": "HAENONG KIMBAP SEAWEED 230g x20",
-"krName": "해농 김밥김 일반, 230g, 20개",
+"krName": "해농 김밥김 일반 230g x20",
 "vendor": "쿠팡",
 "cat": "",
 "perBox": 20,
@@ -291,7 +291,7 @@
 },
 {
 "name": "MCCOL 250ml x30",
-"krName": "맥콜, 250ml, 60개",
+"krName": "맥콜 250ml x30",
 "vendor": "쿠팡",
 "cat": "BEVERAGE",
 "perBox": 60,
@@ -301,7 +301,7 @@
 },
 {
 "name": "Paldo PpuyoSoda Soda 245ml x24",
-"krName": "뿌요 소다 오렌지, 245ml, 48개",
+"krName": "뿌요 소다 오렌지 245ml x24",
 "vendor": "쿠팡",
 "cat": "BEVERAGE",
 "perBox": 48,
@@ -311,7 +311,7 @@
 },
 {
 "name": "NONGSHIM WELCHS ORANGE (ZERO) 355ml x 24",
-"krName": "웰치스 제로 오렌지맛, 24개, 355ml",
+"krName": "웰치스 제로 오렌지맛 355ml x24",
 "vendor": "쿠팡",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -321,7 +321,7 @@
 },
 {
 "name": "LOTTE CHILSUNG CIDER ZERO YUJA 335ml x24",
-"krName": "칠성사이다 제로 유자, 72개, 355ml",
+"krName": "칠성사이다 제로 유자 335ml x24",
 "vendor": "쿠팡",
 "cat": "BEVERAGE",
 "perBox": 72,
@@ -331,7 +331,7 @@
 },
 {
 "name": "HAITAI COCO PALM MANGO JUICE 340ml x24",
-"krName": "코코팜 망고코넛, 340ml, 24개",
+"krName": "코코팜 망고코넛 340ml x24",
 "vendor": "쿠팡",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -341,7 +341,7 @@
 },
 {
 "name": "POWERADE 240ml x 30",
-"krName": "파워에이드 마운틴블라스트, 240ml, 90개",
+"krName": "파워에이드 마운틴블라스트 240ml x30",
 "vendor": "쿠팡",
 "cat": "BEVERAGE",
 "perBox": 90,
@@ -351,7 +351,7 @@
 },
 {
 "name": "PALDO PORORO STRAWBERRY 235ml x 24",
-"krName": "팔도 귀여운내친구 뽀로로 딸기맛, 235ml, 48개",
+"krName": "팔도 귀여운내친구 뽀로로 딸기맛 235ml x24",
 "vendor": "쿠팡",
 "cat": "BEVERAGE",
 "perBox": 48,
@@ -361,7 +361,7 @@
 },
 {
 "name": "PALDO PORORO APPLE 235ml x 24",
-"krName": "팔도 귀여운내친구 뽀로로 사과맛, 235ml, 24개",
+"krName": "팔도 귀여운내친구 뽀로로 사과맛 235ml x24",
 "vendor": "쿠팡",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -371,7 +371,7 @@
 },
 {
 "name": "PEPSI ZERO PEACH FLAVOR 355ml x24",
-"krName": "펩시 제로슈거 피치향, 96개, 355ml",
+"krName": "펩시 제로슈거 피치향 355ml x24",
 "vendor": "쿠팡",
 "cat": "BEVERAGE",
 "perBox": 96,
@@ -381,7 +381,7 @@
 },
 {
 "name": "HERSHEY'S CHOCOLATE DRINK 235ml x24",
-"krName": "허쉬 초콜릿드링크 오리지널, 235ml, 48개",
+"krName": "허쉬 초콜릿드링크 오리지널 235ml x24",
 "vendor": "쿠팡",
 "cat": "BEVERAGE",
 "perBox": 48,
@@ -391,7 +391,7 @@
 },
 {
 "name": "COCA COLA FANTA MELON 350ml x24",
-"krName": "환타 멜론, 350ml, 24개",
+"krName": "환타 멜론 350ml x24",
 "vendor": "쿠팡",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -401,7 +401,7 @@
 },
 {
 "name": "MAXIM KANU MATCHA 24T 17.3g x24",
-"krName": "맥심 카누 말차라떼 24T(그린티)",
+"krName": "맥심 카누 말차라떼 (그린티) 17.3g x24",
 "vendor": "네이버",
 "cat": "COFFEE & TEA",
 "perBox": 1,
@@ -411,7 +411,7 @@
 },
 {
 "name": "KANU DARK ROAST AMERICANO 100T 90g x6",
-"krName": "맥심 카누 미니 다크로스트 블랙커피 100T",
+"krName": "맥심 카누 미니 다크로스트 블랙커피 90g x6",
 "vendor": "네이버",
 "cat": "COFFEE & TEA",
 "perBox": 1,
@@ -421,7 +421,7 @@
 },
 {
 "name": "MAXIM Kanu tiramisu latte 24t 415.2g",
-"krName": "맥심 카누 티라미수 라떼 48T",
+"krName": "맥심 카누 티라미수 라떼 415.2g x1",
 "vendor": "네이버",
 "cat": "COFFEE & TEA",
 "perBox": 1,
@@ -431,7 +431,7 @@
 },
 {
 "name": "ROASTIQUE MATCHA CREAM VANILLA LATTE 200g x 12",
-"krName": "쟈뎅 로스티크 말차 크림바닐라 라떼 10P",
+"krName": "쟈뎅 로스티크 말차 크림바닐라 라떼 10P 200g x12",
 "vendor": "테라파인",
 "cat": "COFFEE & TEA",
 "perBox": 1,
@@ -441,7 +441,7 @@
 },
 {
 "name": "ROASTIQUE OUR TEA APPLE PEACH OOLONG TEA 92.8g x 20",
-"krName": "쟈뎅 아워티 애플 우롱 티 8P",
+"krName": "쟈뎅 아워티 애플 우롱 티 8P 92.8g x20",
 "vendor": "테라파인",
 "cat": "COFFEE & TEA",
 "perBox": 1,
@@ -451,7 +451,7 @@
 },
 {
 "name": "ROASTIQUE OUR TEA ORANGE GRAPEFRUIT BLACK TEA 151.2g x 20",
-"krName": "쟈뎅 아워티 오렌지 자몽 블랙 티 8P",
+"krName": "쟈뎅 아워티 오렌지 자몽 블랙 티 8P 151.2g x20",
 "vendor": "테라파인",
 "cat": "COFFEE & TEA",
 "perBox": 1,
@@ -461,7 +461,7 @@
 },
 {
 "name": "ROASTIQUE OUR TEA JEJU GREEN TANGERINE 134.4g X 20",
-"krName": "쟈뎅 아워티 제주청귤 캐모마일 티 8P",
+"krName": "쟈뎅 아워티 제주청귤 캐모마일 티 8P 134.4g x20",
 "vendor": "테라파인",
 "cat": "COFFEE & TEA",
 "perBox": 1,
@@ -471,7 +471,7 @@
 },
 {
 "name": "ROASTIQUE OUR TEA PINK LYCHEE CHAMOMILE TEA 176g x 20",
-"krName": "쟈뎅 아워티 핑크 리치 캐모마일 티 8P",
+"krName": "쟈뎅 아워티 핑크 리치 캐모마일 티 8P 176g x20",
 "vendor": "테라파인",
 "cat": "COFFEE & TEA",
 "perBox": 1,
@@ -481,7 +481,7 @@
 },
 {
 "name": "MAXIM Kanu dolce latte 24T x8",
-"krName": "카누 돌체 라떼 커피믹스, 17.3g, 24개입, 4개",
+"krName": "카누 돌체 라떼 커피믹스 24T x8",
 "vendor": "쿠팡",
 "cat": "COFFEE & TEA",
 "perBox": 1,
@@ -491,7 +491,7 @@
 },
 {
 "name": "Maxim Kanu Espresso Milk Tea Latte 24T",
-"krName": "카누 에스프레소 밀크티 라떼, 17.3g, 24개입, 1개",
+"krName": "카누 에스프레소 밀크티 라떼 24T x1",
 "vendor": "쿠팡",
 "cat": "COFFEE & TEA",
 "perBox": 1,
@@ -501,7 +501,7 @@
 },
 {
 "name": "SAMYANG BULDAK HOT CHICKEN RAMEN 145g x32",
-"krName": "삼양식품 불닭볶음탕면 145g, 32개",
+"krName": "삼양식품 불닭볶음탕면 145g x32",
 "vendor": "쿠팡",
 "cat": "RAMYUN (SOUP)",
 "perBox": 32,
@@ -511,7 +511,7 @@
 },
 {
 "name": "OTTOGI BODUL BODUL CHEESE RAMYUN MILD 111g 4X8",
-"krName": "오뚜기 보들보들 치즈라면 순한맛 111g",
+"krName": "오뚜기 보들보들 치즈라면 순한맛 111g x8",
 "vendor": "",
 "cat": "RAMYUN (SOUP)",
 "perBox": 32,
@@ -631,7 +631,7 @@
 },
 {
 "name": "SAMYANG BULDAK CHEESE MULTI 140g x40/140g x32",
-"krName": "삼양 치즈불닭볶음면 140g",
+"krName": "삼양 치즈불닭볶음면 140g x40",
 "vendor": "",
 "cat": "RAMYUN (STIR FRIED)",
 "perBox": 32,
@@ -661,7 +661,7 @@
 },
 {
 "name": "PULMUONE SPRING WATER 500mlx20",
-"krName": "풀무원 샘물 500ml x20",
+"krName": "풀무원 샘물 x20",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 20,
@@ -861,7 +861,7 @@
 },
 {
 "name": "JEJU Samdasoo 2liters x 6",
-"krName": "제주 삼다수 2L x6",
+"krName": "제주 삼다수 x6",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 6,
@@ -961,7 +961,7 @@
 },
 {
 "name": "Danongwon Original Hot Chocolate 50T 1000g x8",
-"krName": "다농원 오리지널 핫초코 50T",
+"krName": "다농원 오리지널 핫초코 1000g x8",
 "vendor": "",
 "cat": "COFFEE & TEA",
 "perBox": 8,
@@ -971,7 +971,7 @@
 },
 {
 "name": "MAXIM GOLD SUPREME GOLD 170T 14g x4",
-"krName": "맥심 슈프림 골드 170T",
+"krName": "맥심 슈프림 골드 14g x4",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 4,
@@ -1021,7 +1021,7 @@
 },
 {
 "name": "CocaCola Coke Zero Sugar 320ml",
-"krName": "코카콜라 제로 320ml",
+"krName": "코카콜라 제로 320ml x1",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 1,
@@ -1031,7 +1031,7 @@
 },
 {
 "name": "KKOTSAEM HONEY HANLABONG TEA 1KGX8",
-"krName": "꽃샘 꿀한라봉차 1kg x8",
+"krName": "꽃샘 꿀한라봉차 x8",
 "vendor": "",
 "cat": "COFFEE & TEA",
 "perBox": 8,
@@ -1191,7 +1191,7 @@
 },
 {
 "name": "Maxim Mocha Gold Light Coffee Mix 100T 1180g x 8",
-"krName": "맥심 모카골드 라이트 커피믹스 100T",
+"krName": "맥심 모카골드 라이트 커피믹스 1180g x8",
 "vendor": "",
 "cat": "COFFEE & TEA",
 "perBox": 8,
@@ -1241,7 +1241,7 @@
 },
 {
 "name": "MAXIM Arabica coffee mix 100T x8",
-"krName": "맥심 아라비카 커피믹스 100T",
+"krName": "맥심 아라비카 커피믹스 100T x8",
 "vendor": "",
 "cat": "COFFEE & TEA",
 "perBox": 8,
@@ -1251,7 +1251,7 @@
 },
 {
 "name": "MAXIM Mocha gold zero sugar coffee mix 20T 230g x 24",
-"krName": "맥심 모카골드 제로슈거 커피믹스 20T",
+"krName": "맥심 모카골드 제로슈거 커피믹스 230g x24",
 "vendor": "",
 "cat": "COFFEE & TEA",
 "perBox": 24,
@@ -1321,7 +1321,7 @@
 },
 {
 "name": "PULMUONE WATER (LABEL) 2LX6",
-"krName": "풀무원 샘물(라벨) 2L x6",
+"krName": "풀무원 샘물(라벨) x6",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 6,
@@ -1361,7 +1361,7 @@
 },
 {
 "name": "OFOOD Cheese seaweed snack 4G x 90",
-"krName": "",
+"krName": "오푸드 치즈 김스낵 4g x90",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 90,
@@ -1371,7 +1371,7 @@
 },
 {
 "name": "AHYUL PREMIUM TRADITIONAL SEAWEED 9x8",
-"krName": "",
+"krName": "아율 프리미엄 전통김 x8",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 8,
@@ -1381,7 +1381,7 @@
 },
 {
 "name": "NAMKWANG SEAWEED SNACKS 16x6",
-"krName": "",
+"krName": "남광 김스낵 x6",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 6,
@@ -1391,7 +1391,7 @@
 },
 {
 "name": "NONGSHIM Spicy jang kalgugsu noodle multi 103g x 32",
-"krName": "",
+"krName": "농심 얼큰장칼국수 멀티 103g x32",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 32,
@@ -1401,7 +1401,7 @@
 },
 {
 "name": "MUPAMATANGMYUN RAMYUN MULTI PACK 122G 4/8",
-"krName": "",
+"krName": "무파마탕면 멀티 122g x32",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 32,
@@ -1411,7 +1411,7 @@
 },
 {
 "name": "LOTTE PEPERO ALMOND 32g x 40",
-"krName": "",
+"krName": "롯데 빼빼로 아몬드 32g x40",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 40,
@@ -1421,7 +1421,7 @@
 },
 {
 "name": "OTTOGI Old dried seaweed 250g x10",
-"krName": "",
+"krName": "오뚜기 옛날 마른김 250g x10",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 10,
@@ -1431,7 +1431,7 @@
 },
 {
 "name": "KING CRAB JAPONICA RICE 25KG",
-"krName": "",
+"krName": "킹크랩 자포니카 쌀 25kg x1",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 1,
@@ -1441,7 +1441,7 @@
 },
 {
 "name": "SAMYANG RAMEN MULTI 130g x 40 /120g x40",
-"krName": "",
+"krName": "삼양라면 멀티 130g x40",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 40,
@@ -1451,7 +1451,7 @@
 },
 {
 "name": "LOTTE CHILSUNG CANTATA ICED SWEET AMERICANO 230ml x 50",
-"krName": "",
+"krName": "롯데 칠성 칸타타 아이스 스윗 아메리카노 230ml x50",
 "vendor": "",
 "cat": "POUCH",
 "perBox": 50,
@@ -1461,7 +1461,7 @@
 },
 {
 "name": "PALDO JJAJANGMYEON 203g x32",
-"krName": "",
+"krName": "팔도 짜장면 203g x32",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 32,
@@ -1471,7 +1471,7 @@
 },
 {
 "name": "LOTTE Chilsung cantata ice black coffee 230ml x 50",
-"krName": "",
+"krName": "롯데 칠성 칸타타 아이스 블랙커피 230ml x50",
 "vendor": "",
 "cat": "POUCH",
 "perBox": 50,
@@ -1481,7 +1481,7 @@
 },
 {
 "name": "COCA COLA COKE 250ml x 30",
-"krName": "",
+"krName": "코카콜라 250ml x30",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 30,
@@ -1491,7 +1491,7 @@
 },
 {
 "name": "NONGSHIM HAEMUL ANSUNG TANGMYUN MULTI 112gx 40",
-"krName": "",
+"krName": "농심 해물 안성탕면 멀티 x40",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 40,
@@ -1501,7 +1501,7 @@
 },
 {
 "name": "MAXIM Kanu latte 30t X 6",
-"krName": "",
+"krName": "맥심 카누 라떼 30T x6",
 "vendor": "",
 "cat": "COFFEE",
 "perBox": 6,
@@ -1511,7 +1511,7 @@
 },
 {
 "name": "KKOTSAEM HONEY CITRON TEA 1kg x8",
-"krName": "",
+"krName": "꽃샘 허니 유자차 1kg x8",
 "vendor": "",
 "cat": "COFFEE",
 "perBox": 8,
@@ -1521,7 +1521,7 @@
 },
 {
 "name": "NAMKWANG SEAWEED SNACKS 24g x 3",
-"krName": "",
+"krName": "남광 김스낵 24g x3",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 3,
@@ -1531,7 +1531,7 @@
 },
 {
 "name": "PALDO Ilpoom jjajang multi 200g x 32",
-"krName": "",
+"krName": "팔도 일품짜장 멀티 200g x32",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 32,
@@ -1541,7 +1541,7 @@
 },
 {
 "name": "KKOTSAEM LEMON TEA 1KG X 8",
-"krName": "",
+"krName": "꽃샘 레몬차 1kg x8",
 "vendor": "",
 "cat": "COFFEE",
 "perBox": 8,
@@ -1551,7 +1551,7 @@
 },
 {
 "name": "BINGGRAE MILK VANILLA 200ML X 24",
-"krName": "",
+"krName": "빙그레 바닐라우유 200ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -1561,7 +1561,7 @@
 },
 {
 "name": "LOTTE PEPERO WHITE COOKIE 37G x40",
-"krName": "",
+"krName": "롯데 빼빼로 화이트쿠키 37g x40",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 40,
@@ -1571,7 +1571,7 @@
 },
 {
 "name": "Maxim White Gold Coffee Mix 100T 1170g x 8",
-"krName": "",
+"krName": "맥심 화이트골드 커피믹스 1170g x8",
 "vendor": "",
 "cat": "COFFEE",
 "perBox": 8,
@@ -1581,7 +1581,7 @@
 },
 {
 "name": "LOTTE MILKIS MELON 250ml x 30",
-"krName": "",
+"krName": "롯데 밀키스 멜론 250ml x30",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 30,
@@ -1591,7 +1591,7 @@
 },
 {
 "name": "YOUUS Bear Shaped Candy Apple Mango Flavor 40g 10 X 12",
-"krName": "",
+"krName": "유어스 곰모양 젤리 애플망고 40g x12",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 12,
@@ -1601,7 +1601,7 @@
 },
 {
 "name": "CANTABILE ORANGE ADE 230ml x 50",
-"krName": "",
+"krName": "칸타빌레 오렌지에이드 230ml x50",
 "vendor": "",
 "cat": "POUCH",
 "perBox": 50,
@@ -1611,7 +1611,7 @@
 },
 {
 "name": "Paldo koreno bulgogi stir-fried multi carbonara cream 100g 5x8",
-"krName": "",
+"krName": "팔도 코레노 불고기볶음 까르보나라크림 멀티 100g x8",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 40,
@@ -1621,7 +1621,7 @@
 },
 {
 "name": "SAMYANG 4-CHEESE HOT CHICKEN STIR FRY 140g x 32 (PROMO ORDER)",
-"krName": "",
+"krName": "삼양 4가지치즈 불닭볶음면 140g x32",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 32,
@@ -1631,7 +1631,7 @@
 },
 {
 "name": "COCACOLA ROYAL ORANGE 500ML X 24",
-"krName": "",
+"krName": "코카콜라 로얄 오렌지 500ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -1641,7 +1641,7 @@
 },
 {
 "name": "KKOTSAEM HONEY ALOE TEA 1kg x8",
-"krName": "",
+"krName": "꽃샘 허니 알로에차 1kg x8",
 "vendor": "",
 "cat": "COFFEE",
 "perBox": 8,
@@ -1651,7 +1651,7 @@
 },
 {
 "name": "PALDO KORENO CHEESE SPICY STIR-FRIED 100g x 40",
-"krName": "",
+"krName": "팔도 코레노 치즈 매운볶음면 100g x40",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 40,
@@ -1661,7 +1661,7 @@
 },
 {
 "name": "MJ KIMBAP SEAWEED 100SHEET x20",
-"krName": "",
+"krName": "MJ 김밥김 100매 x20",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 20,
@@ -1671,7 +1671,7 @@
 },
 {
 "name": "SAMYANG TANGLE GARLIC OIL PASTA MULTI 32(4X8) 100G",
-"krName": "",
+"krName": "삼양 탱글 갈릭오일 파스타 멀티 100g x32",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 32,
@@ -1681,7 +1681,7 @@
 },
 {
 "name": "SEOULMILK UHT Chocolate milk 190ml x 24",
-"krName": "",
+"krName": "서울우유 초코우유 190ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -1691,7 +1691,7 @@
 },
 {
 "name": "PALDO LOBSTER RAMYUN 120g x 16",
-"krName": "",
+"krName": "팔도 랍스터라면 120g x16",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 16,
@@ -1701,7 +1701,7 @@
 },
 {
 "name": "NONGSHIM WELCHS WHITE GRAPE 355ml x 24",
-"krName": "",
+"krName": "농심 웰치스 청포도 355ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -1711,7 +1711,7 @@
 },
 {
 "name": "ICETALK BLACK AMERICANO 230ml x 50",
-"krName": "",
+"krName": "아이스톡 블랙 아메리카노 230ml x50",
 "vendor": "",
 "cat": "POUCH",
 "perBox": 50,
@@ -1721,7 +1721,7 @@
 },
 {
 "name": "PALDO BIBIMMYEON II 130g x 32/16",
-"krName": "",
+"krName": "팔도 비빔면 II 130g x32",
 "vendor": "",
 "cat": "RAMYUN",
 "perBox": 32,
@@ -1731,7 +1731,7 @@
 },
 {
 "name": "WOONGJIN DR. Aloe juice 8% 500ml X 20",
-"krName": "",
+"krName": "웅진 닥터 알로에주스 8% 500ml x20",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 20,
@@ -1741,7 +1741,7 @@
 },
 {
 "name": "MAXIM Kanu vanilla latte 24T X 6",
-"krName": "",
+"krName": "맥심 카누 바닐라라떼 24T x6",
 "vendor": "",
 "cat": "COFFEE",
 "perBox": 6,
@@ -1751,7 +1751,7 @@
 },
 {
 "name": "COCACOLA ROYAL GRAPE CAN 320ML X 24",
-"krName": "",
+"krName": "코카콜라 로얄 포도 320ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -1761,7 +1761,7 @@
 },
 {
 "name": "LOTTE PEPERO STRAWBERRY 32g x40",
-"krName": "",
+"krName": "롯데 빼빼로 딸기 32g x40",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 40,
@@ -1771,7 +1771,7 @@
 },
 {
 "name": "OKF SPARKLING ZERO STRAWBERRY 350ml x 24",
-"krName": "",
+"krName": "OKF 스파클링 제로 딸기 350ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -1781,7 +1781,7 @@
 },
 {
 "name": "SAMYANG BULDAK CARBONARA SMALL CUP 80g x 30",
-"krName": "삼양 불닭 까르보 까르보나라 미니컵 컵 80g",
+"krName": "삼양 불닭 까르보 까르보나라 미니컵 컵 80g x30",
 "vendor": "",
 "cat": "RAMYUN (CUP)",
 "perBox": 30,
@@ -1791,7 +1791,7 @@
 },
 {
 "name": "OTTOGI MAYONNAISE (SPOUT PACK) 3.2kg x 4",
-"krName": "오뚜기 마요네즈 팩 2kg",
+"krName": "오뚜기 마요네즈 팩 3.2kg x4",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 4,
@@ -1801,7 +1801,7 @@
 },
 {
 "name": "LOTTE PEPERO CRUNCHY 39g x40",
-"krName": "롯데 빼빼로 크런치 39g",
+"krName": "롯데 빼빼로 크런치 39g x40",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 40,
@@ -1811,7 +1811,7 @@
 },
 {
 "name": "PALDO KORENO BULGOGI STIR-FRIED MULTI SPICY 40(5X8)X100G",
-"krName": "팔도 코레노 불고기 볶음 멀티 매운 100G",
+"krName": "팔도 코레노 불고기 볶음 멀티 매운 100g x40",
 "vendor": "",
 "cat": "RAMYUN (STIR FRIED)",
 "perBox": 40,
@@ -1821,7 +1821,7 @@
 },
 {
 "name": "KKOTSAEM GRAPEFRIUT TEA 1kg x8",
-"krName": "꽃샘 자몽 포도 티 1kg",
+"krName": "꽃샘 자몽 포도 티 1kg x8",
 "vendor": "",
 "cat": "COFFEE & TEA",
 "perBox": 8,
@@ -1831,7 +1831,7 @@
 },
 {
 "name": "LOTTE PEPERO ORIGINAL 47g x40",
-"krName": "롯데 빼빼로 오리지널 47g",
+"krName": "롯데 빼빼로 오리지널 47g x40",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 40,
@@ -1841,7 +1841,7 @@
 },
 {
 "name": "SAMLIP CLASSIC WAFFLE MINI 600g x20",
-"krName": "삼립 클래식 와플 미니 600g",
+"krName": "삼립 클래식 와플 미니 600g x20",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 20,
@@ -1851,7 +1851,7 @@
 },
 {
 "name": "OTTOGI OLD FASHIONED JAPCHAE 75g x 32",
-"krName": "오뚜기 옛날 잡채 75g",
+"krName": "오뚜기 옛날 잡채 75g x32",
 "vendor": "",
 "cat": "RAMYUN (SOUP)",
 "perBox": 32,
@@ -1861,7 +1861,7 @@
 },
 {
 "name": "COCA COLA ROYAL TRU-ORANGE CAN 320ml x 24",
-"krName": "로얄 320ml",
+"krName": "로얄 320ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -1871,7 +1871,7 @@
 },
 {
 "name": "KYOUNGJIN Seosoned Dried Fish 23g",
-"krName": "경진 건어물 닥터 23g",
+"krName": "경진 건어물 닥터 23g x30",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 30,
@@ -1881,7 +1881,7 @@
 },
 {
 "name": "DAMTUH WALNUT ALMOND & ADLAY TEA 18g",
-"krName": "담터 호두 아몬드 율무 티 18g",
+"krName": "담터 호두 아몬드 율무 티 18g x50",
 "vendor": "",
 "cat": "COFFEE & TEA",
 "perBox": 50,
@@ -1891,7 +1891,7 @@
 },
 {
 "name": "LOTTE PEPERO SNOWY ALMOND 32g x40",
-"krName": "롯데 빼빼로 스노우 아몬드 32g",
+"krName": "롯데 빼빼로 스노우 아몬드 32g x40",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 40,
@@ -1901,7 +1901,7 @@
 },
 {
 "name": "MAXIM Kanu vanilla latte 8t 138.4g",
-"krName": "맥심 바닐라 라떼 4g",
+"krName": "맥심 바닐라 라떼 138.4g x8",
 "vendor": "",
 "cat": "COFFEE & TEA",
 "perBox": 8,
@@ -1911,7 +1911,7 @@
 },
 {
 "name": "CROWN  KICKER BAR 30g x 60",
-"krName": "크라운 키커바 30g",
+"krName": "크라운 키커바 30g x60",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 60,
@@ -1921,7 +1921,7 @@
 },
 {
 "name": "COCA COLA COKE (CAN) 190ML x 30",
-"krName": "콜라 190ML",
+"krName": "콜라 190ml x30",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 30,
@@ -1931,7 +1931,7 @@
 },
 {
 "name": "OKF Spakling clear pineapple 350ml x 24",
-"krName": "OKF 클리어 파인애플 사과 350ml",
+"krName": "OKF 클리어 파인애플 사과 350ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -1941,7 +1941,7 @@
 },
 {
 "name": "OKF SPARKLING CLEAR PEACH 350ml x 24",
-"krName": "OKF 스파클링 클리어 복숭아 350ml",
+"krName": "OKF 스파클링 클리어 복숭아 350ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -1951,7 +1951,7 @@
 },
 {
 "name": "SAMYANG FIRE CHICKEN ORIGINAL  140g x 40 (PROMO ORDER)",
-"krName": "삼양 불닭 오리지널 프로모 140g",
+"krName": "삼양 불닭 오리지널 프로모 140g x40",
 "vendor": "",
 "cat": "RAMYUN (STIR FRIED)",
 "perBox": 40,
@@ -1961,7 +1961,7 @@
 },
 {
 "name": "MAXIM KANU LATTE 135g x 10",
-"krName": "맥심 라떼 135g",
+"krName": "맥심 라떼 135g x10",
 "vendor": "",
 "cat": "COFFEE & TEA",
 "perBox": 10,
@@ -1971,7 +1971,7 @@
 },
 {
 "name": "LOTTE CRUNKY CHOCOLATE 24g x 48",
-"krName": "롯데 크런키 초코 초콜릿 24g",
+"krName": "롯데 크런키 초코 초콜릿 24g x48",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 48,
@@ -1981,7 +1981,7 @@
 },
 {
 "name": "YOUUS Choco filled bananas marshmallow 60g x 40",
-"krName": "유어스 초코 필드 바나나 마시멜로 60g",
+"krName": "유어스 초코 필드 바나나 마시멜로 60g x40",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 40,
@@ -1991,7 +1991,7 @@
 },
 {
 "name": "THE HOT YEOL RAMYUN 120g x 32",
-"krName": "더핫열 라면 120g",
+"krName": "더핫열 라면 120g x32",
 "vendor": "",
 "cat": "RAMYUN (SOUP)",
 "perBox": 32,
@@ -2001,7 +2001,7 @@
 },
 {
 "name": "HAENONG KID KIMBAP SEAWEED  240g x20",
-"krName": "해농 김밥 김 240g",
+"krName": "해농 김밥 김 240g x20",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 20,
@@ -2011,7 +2011,7 @@
 },
 {
 "name": "ZEK SEAWEED HALLOW ROLL BBQ 24g x 18",
-"krName": "제크 김 할로우롤 바베큐 24g",
+"krName": "제크 김 할로우롤 바베큐 24g x18",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 18,
@@ -2021,7 +2021,7 @@
 },
 {
 "name": "ZEK SEAWEED HALLOW ROLL ORIGINAL 24g x 18",
-"krName": "제크 김 할로우롤 오리지널 24g",
+"krName": "제크 김 할로우롤 오리지널 24g x18",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 18,
@@ -2031,7 +2031,7 @@
 },
 {
 "name": "ZEK SEAWEED HALLOW ROLL SPICY 24g x 18",
-"krName": "제크 김 할로우롤 매운 24g",
+"krName": "제크 김 할로우롤 매운 24g x18",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 18,
@@ -2041,7 +2041,7 @@
 },
 {
 "name": "OTTOGI Jin ramen mild big bowl 110g x 12",
-"krName": "오뚜기 진라면 라면 순한 큰사발 사발 110g",
+"krName": "오뚜기 진라면 라면 순한 큰사발 사발 110g x12",
 "vendor": "",
 "cat": "RAMYUN (CUP)",
 "perBox": 12,
@@ -2051,7 +2051,7 @@
 },
 {
 "name": "OTTOGI Jin ramen spicy big bowl 110g x 12",
-"krName": "오뚜기 진라면 라면 매운 큰사발 사발 110g",
+"krName": "오뚜기 진라면 라면 매운 큰사발 사발 110g x12",
 "vendor": "",
 "cat": "RAMYUN (CUP)",
 "perBox": 12,
@@ -2061,7 +2061,7 @@
 },
 {
 "name": "SUNSSI Raw Coconut Latte Egg Crisps 100g x 24",
-"krName": "선씨 코코넛 라떼 에그 과자 100g",
+"krName": "선씨 코코넛 라떼 에그 과자 100g x24",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 24,
@@ -2071,7 +2071,7 @@
 },
 {
 "name": "SUNSSI Taro Milk Egg Crisps 100g x 24",
-"krName": "선씨 타로 우유 에그 과자 100g",
+"krName": "선씨 타로 우유 에그 과자 100g x24",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 24,
@@ -2081,7 +2081,7 @@
 },
 {
 "name": "LOTTE CHOCO PIE ORIGINAL 336g x8",
-"krName": "롯데 초코 초코파이 오리지널 336g",
+"krName": "롯데 초코 초코파이 오리지널 336g x8",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 8,
@@ -2091,7 +2091,7 @@
 },
 {
 "name": "SEOULMILK UHT BANANA MILK 190ML x 24",
-"krName": "서울우유 우유 바나나 190ML",
+"krName": "서울우유 우유 바나나 190ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -2101,7 +2101,7 @@
 },
 {
 "name": "LOTTE Chilsung cider zero 355ml x 24",
-"krName": "롯데 칠성 사이다 제로 355ml",
+"krName": "롯데 칠성 사이다 제로 355ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -2111,7 +2111,7 @@
 },
 {
 "name": "COCACOLA COKE ZERO 290ml x 12",
-"krName": "콜라 제로 290ml",
+"krName": "콜라 제로 290ml x12",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 12,
@@ -2121,7 +2121,7 @@
 },
 {
 "name": "SAMPYO JILLEO SOFT JERKY YOOKPO 30g x 30",
-"krName": "샘표 육포 30g",
+"krName": "샘표 육포 30g x30",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 30,
@@ -2131,7 +2131,7 @@
 },
 {
 "name": "OTTOGI REAL CHEESE RAMEN BIG BOWL 120g x 12",
-"krName": "오뚜기 리얼치즈 치즈 라면 큰사발 사발 120g",
+"krName": "오뚜기 리얼치즈 치즈 라면 큰사발 사발 120g x12",
 "vendor": "",
 "cat": "RAMYUN (CUP)",
 "perBox": 12,
@@ -2141,7 +2141,7 @@
 },
 {
 "name": "SEAWEED SNACKS (PEANUT FLAVOR) 20g x 30",
-"krName": "김 스낵 20g",
+"krName": "김 스낵 20g x30",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 30,
@@ -2151,7 +2151,7 @@
 },
 {
 "name": "GAYA FARM PULPY ALOE DRINK 340ml x 24",
-"krName": "가야팜 펄피 알로에 닥터 340ml",
+"krName": "가야팜 펄피 알로에 닥터 340ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -2161,7 +2161,7 @@
 },
 {
 "name": "CROWN SAEKOMDALCOM ULTRA KIWI 29G 15X6",
-"krName": "크라운 새콤달콤 울트라 키위 29G",
+"krName": "크라운 새콤달콤 울트라 키위 29g x6",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 6,
@@ -2171,7 +2171,7 @@
 },
 {
 "name": "CROWN WHITE HEIM COOKIES 47g x21",
-"krName": "크라운 화이트 하임 쿠키 47g",
+"krName": "크라운 화이트 하임 쿠키 47g x21",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 21,
@@ -2181,7 +2181,7 @@
 },
 {
 "name": "WOONGJIN Nature Yogurt Peach 340ml x 24",
-"krName": "웅진 네이처 요구르트 복숭아 340ml",
+"krName": "웅진 네이처 요구르트 복숭아 340ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -2191,7 +2191,7 @@
 },
 {
 "name": "Sunssi Cheese Cream Cookie 115g x 24",
-"krName": "선씨 치즈 크림 쿠키 115g",
+"krName": "선씨 치즈 크림 쿠키 115g x24",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 24,
@@ -2201,7 +2201,7 @@
 },
 {
 "name": "CROWN SUPER SWEET CORN CHIPS 70g x 16",
-"krName": "크라운 스위트콘 스윗 콘 칩 70g",
+"krName": "크라운 스위트콘 스윗 콘 칩 70g x16",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 16,
@@ -2211,7 +2211,7 @@
 },
 {
 "name": "SEAWEED SNACKS (CHOCO FLAVOR) 20g x 30",
-"krName": "김 스낵 초코 20g",
+"krName": "김 스낵 초코 20g x30",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 30,
@@ -2221,7 +2221,7 @@
 },
 {
 "name": "Sunssi Lava Cookie Balls -Strawberry x 24",
-"krName": "선씨 라바 쿠키 볼 딸기",
+"krName": "선씨 라바 쿠키 볼 딸기 x24",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 24,
@@ -2231,7 +2231,7 @@
 },
 {
 "name": "OTTOGI SWEETCORN NACHO 60g x 12",
-"krName": "오뚜기 스위트콘 스윗 콘 나초 60g",
+"krName": "오뚜기 스위트콘 스윗 콘 나초 60g x12",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 12,
@@ -2241,7 +2241,7 @@
 },
 {
 "name": "CROWN NAEMAM-MOLLANG GREEN APPLE JELLY 50gx40",
-"krName": "크라운 내맘몰랑 몰랑 청사과 사과 젤리",
+"krName": "크라운 내맘몰랑 몰랑 청사과 사과 젤리 x40",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 40,
@@ -2251,7 +2251,7 @@
 },
 {
 "name": "SUNSSI Salted Egg and Cheese Egg Crisps 100g x 24",
-"krName": "선씨 솔티드 에그 치즈 과자 100g",
+"krName": "선씨 솔티드 에그 치즈 과자 100g x24",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 24,
@@ -2261,7 +2261,7 @@
 },
 {
 "name": "OKF POST LACTO SPARKLING ZERO SUGAR BANANA CREAM 350ml x 20",
-"krName": "OKF 포스트락토 스파클링 제로 바나나 크림 350ml",
+"krName": "OKF 포스트락토 스파클링 제로 바나나 크림 350ml x20",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 20,
@@ -2271,7 +2271,7 @@
 },
 {
 "name": "OKF POST LACTO SPARKLING ZERO GINGER ALE 350ml x 20",
-"krName": "OKF 포스트락토 스파클링 제로 진저에일 350ml",
+"krName": "OKF 포스트락토 스파클링 제로 진저에일 350ml x20",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 20,
@@ -2281,7 +2281,7 @@
 },
 {
 "name": "OKF POST LACTO SPARKLING ZERO HONEY GRAPEFRUIT 350ml x 20",
-"krName": "OKF 포스트락토 스파클링 제로 허니 자몽 포도 350ml",
+"krName": "OKF 포스트락토 스파클링 제로 허니 자몽 포도 350ml x20",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 20,
@@ -2291,7 +2291,7 @@
 },
 {
 "name": "OKF POST LACTO SPARKLING ZERO PINEAPPLE MANGO 350ml x 20",
-"krName": "OKF 포스트락토 스파클링 제로 파인애플 사과 사과망고 350ml",
+"krName": "OKF 포스트락토 스파클링 제로 파인애플 사과 사과망고 350ml x20",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 20,
@@ -2301,7 +2301,7 @@
 },
 {
 "name": "OKF POST LACTO SPARKLING ZERO CREAM SODA 350ml x 20",
-"krName": "OKF 포스트락토 스파클링 제로 크림 크림소다 소다 350ml",
+"krName": "OKF 포스트락토 스파클링 제로 크림 크림소다 소다 350ml x20",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 20,
@@ -2311,7 +2311,7 @@
 },
 {
 "name": "LOTTE ALOE PINEAPPLE 240ml x 30",
-"krName": "롯데 알로에 파인애플 사과 240ml",
+"krName": "롯데 알로에 파인애플 사과 240ml x30",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 30,
@@ -2321,7 +2321,7 @@
 },
 {
 "name": "CROWN COUQUE D' ASSE WHITE 77g x21",
-"krName": "크라운 쿠크 화이트 77g",
+"krName": "크라운 쿠크 화이트 77g x21",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 21,
@@ -2331,7 +2331,7 @@
 },
 {
 "name": "OTTOGI Real jjolmyeon 150g x 32",
-"krName": "오뚜기 쫄면 150g",
+"krName": "오뚜기 쫄면 150g x32",
 "vendor": "",
 "cat": "RAMYUN (STIR FRIED)",
 "perBox": 32,
@@ -2341,7 +2341,7 @@
 },
 {
 "name": "OTTOGI BODUL BODUL CHEESE RAMYUN MILD BIG BOWL 90g x 12",
-"krName": "오뚜기 보들보들 치즈 라면 순한 큰사발 사발 90g",
+"krName": "오뚜기 보들보들 치즈 라면 순한 큰사발 사발 90g x12",
 "vendor": "",
 "cat": "RAMYUN (CUP)",
 "perBox": 12,
@@ -2351,7 +2351,7 @@
 },
 {
 "name": "BAF CARAMEL & CHEESE POPCORN 80g x 12",
-"krName": "BAF 카라멜 치즈 치즈팝콘 팝콘 콘 80g",
+"krName": "BAF 카라멜 치즈 치즈팝콘 팝콘 콘 80g x12",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 12,
@@ -2361,7 +2361,7 @@
 },
 {
 "name": "YOUUS PINKPONG BABY SHARK JELLY 60g 10/2",
-"krName": "유어스 핑크퐁 아기상어 젤리 60g",
+"krName": "유어스 핑크퐁 아기상어 젤리 60g x20",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 20,
@@ -2371,7 +2371,7 @@
 },
 {
 "name": "BULRAMEN ORIGINAL 137g x 5x8",
-"krName": "불라면 라면 오리지널 137g",
+"krName": "불라면 라면 오리지널 137g x40",
 "vendor": "",
 "cat": "RAMYUN (STIR FRIED)",
 "perBox": 8,
@@ -2381,7 +2381,7 @@
 },
 {
 "name": "ROYAL RAMEN MULTI 120g x 32",
-"krName": "로얄 라면 멀티 120g",
+"krName": "로얄 라면 멀티 120g x32",
 "vendor": "",
 "cat": "RAMYUN (SOUP)",
 "perBox": 32,
@@ -2391,7 +2391,7 @@
 },
 {
 "name": "FRENCH PIE Apple 192g x 12",
-"krName": "프렌치파이 사과 192g",
+"krName": "프렌치파이 사과 192g x12",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 12,
@@ -2401,7 +2401,7 @@
 },
 {
 "name": "PALDO KORENO BULGOGI STIR-FRIED SMALL CUP SPICY CHEESE 65g x 24",
-"krName": "팔도 코레노 불고기 볶음 미니컵 컵 매운 65g",
+"krName": "팔도 코레노 불고기 볶음 미니컵 컵 매운 65g x24",
 "vendor": "",
 "cat": "RAMYUN (CUP)",
 "perBox": 24,
@@ -2411,7 +2411,7 @@
 },
 {
 "name": "KOOKSOONDANG MAKGEOLLI ORIGINAL 750ml x20",
-"krName": "국순당 막걸리 오리지널 750ml",
+"krName": "국순당 막걸리 오리지널 750ml x20",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 20,
@@ -2421,7 +2421,7 @@
 },
 {
 "name": "CROWN MYCHEW APPLE MANGO 44g x 15",
-"krName": "크라운 마이쮸 사과 사과망고 망고 44g",
+"krName": "크라운 마이쮸 사과 사과망고 망고 44g x15",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 15,
@@ -2431,7 +2431,7 @@
 },
 {
 "name": "LOTTE Custard Cake 230g x 8",
-"krName": "롯데 커스터드케이크 230g",
+"krName": "롯데 커스터드케이크 230g x8",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 8,
@@ -2441,7 +2441,7 @@
 },
 {
 "name": "CROWN CORN CHOCO 66g x18",
-"krName": "크라운 콘 초코 66g",
+"krName": "크라운 콘 초코 66g x18",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 18,
@@ -2451,7 +2451,7 @@
 },
 {
 "name": "CROWN Mychew grape 44g x 15",
-"krName": "크라운 마이쮸 포도 44g",
+"krName": "크라운 마이쮸 포도 44g x15",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 15,
@@ -2461,7 +2461,7 @@
 },
 {
 "name": "CROWN Churros 84g x 16",
-"krName": "크라운 츄러스 84g",
+"krName": "크라운 츄러스 84g x16",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 16,
@@ -2471,7 +2471,7 @@
 },
 {
 "name": "DAMTUH 12 SUPER GRAIN MIX POWDER 20g",
-"krName": "담터 슈퍼곡물 곡물 믹스 파우더 20g",
+"krName": "담터 슈퍼곡물 곡물 믹스 파우더 20g x50",
 "vendor": "",
 "cat": "COFFEE & TEA",
 "perBox": 50,
@@ -2481,7 +2481,7 @@
 },
 {
 "name": "CROWN Mychew apple 44g x 15",
-"krName": "크라운 마이쮸 사과 44g",
+"krName": "크라운 마이쮸 사과 44g x15",
 "vendor": "",
 "cat": "CONFECTIONERY",
 "perBox": 15,
@@ -2491,7 +2491,7 @@
 },
 {
 "name": "BINGGRAE Juicycool soda 200ml x 24",
-"krName": "빙그레 쥬시쿨 소다 200ml",
+"krName": "빙그레 쥬시쿨 소다 200ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -2501,7 +2501,7 @@
 },
 {
 "name": "LOTTE MILKIS ZERO 250ml x 30",
-"krName": "롯데 밀키스 우유 제로 250ml",
+"krName": "롯데 밀키스 우유 제로 250ml x30",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 30,
@@ -2511,7 +2511,7 @@
 },
 {
 "name": "LOTTE MILKIS SODA 500ml x20",
-"krName": "롯데 밀키스 우유 소다 500ml",
+"krName": "롯데 밀키스 우유 소다 500ml x20",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 20,
@@ -2521,7 +2521,7 @@
 },
 {
 "name": "PALDO KORENO POUCH JJAJANG ENG 115G",
-"krName": "팔도 코레노 파우치 짜장 115G",
+"krName": "팔도 코레노 파우치 짜장 115g x1",
 "vendor": "",
 "cat": "RAMYUN (STIR FRIED)",
 "perBox": 1,
@@ -2531,7 +2531,7 @@
 },
 {
 "name": "CANTABILE SWEET AMERICANO 230ml x 50",
-"krName": "칸타빌레 스윗 아메리카노 230ml",
+"krName": "칸타빌레 스윗 아메리카노 230ml x50",
 "vendor": "",
 "cat": "POUCH DRINKS",
 "perBox": 50,
@@ -2541,7 +2541,7 @@
 },
 {
 "name": "PALDO WANG TUKONG MULTI ORIGINAL 130GX32",
-"krName": "팔도 왕뚜껑 멀티 오리지널",
+"krName": "팔도 왕뚜껑 멀티 오리지널 x32",
 "vendor": "",
 "cat": "RAMYUN (SOUP)",
 "perBox": 32,
@@ -2551,7 +2551,7 @@
 },
 {
 "name": "DAMTUH KOMBUCHA SHINEMUSCAT(WITH POKETMON COASTER) 10TX12",
-"krName": "담터 콤부차 샤인머스캣",
+"krName": "담터 콤부차 샤인머스캣 x12",
 "vendor": "",
 "cat": "COFFEE & TEA",
 "perBox": 12,
@@ -2561,7 +2561,7 @@
 },
 {
 "name": "SAMYANG MEP MALA JJAMPONG STIR-FRIED RAMYUN MULTI 80g 4x8",
-"krName": "삼양 매운 마라 짬뽕 볶음 라면 멀티 80g",
+"krName": "삼양 매운 마라 짬뽕 볶음 라면 멀티 80g x8",
 "vendor": "",
 "cat": "RAMYUN (STIR FRIED)",
 "perBox": 8,
@@ -2571,7 +2571,7 @@
 },
 {
 "name": "NONGSHIM HOOROOROOK RICE CUP NOODLE CHICKEN SOUP 73g x 12",
-"krName": "농심 후루룩 쌀 컵 면 닭고기 73g",
+"krName": "농심 후루룩 쌀 컵 면 닭고기 73g x12",
 "vendor": "",
 "cat": "RAMYUN (CUP)",
 "perBox": 12,
@@ -2581,7 +2581,7 @@
 },
 {
 "name": "PALDO SANGNAMJA RAMYUN 131G 4X8",
-"krName": "팔도 상남자 라면 131G",
+"krName": "팔도 상남자 라면 131g x8",
 "vendor": "",
 "cat": "RAMYUN (SOUP)",
 "perBox": 8,
@@ -2591,7 +2591,7 @@
 },
 {
 "name": "NONGSHIM Saeng saeng udon noodle 253g x 20",
-"krName": "농심 생생 우동 면 253g",
+"krName": "농심 생생 우동 면 253g x20",
 "vendor": "",
 "cat": "RAMYUN (SOUP)",
 "perBox": 20,
@@ -2601,7 +2601,7 @@
 },
 {
 "name": "NONGSHIM BANANA KICK SNACK 75g x 20",
-"krName": "농심 바나나 바나나킥 스낵 75g",
+"krName": "농심 바나나 바나나킥 스낵 75g x20",
 "vendor": "",
 "cat": "SNACK",
 "perBox": 20,
@@ -2611,7 +2611,7 @@
 },
 {
 "name": "OTTOGI Curry Noodles bit spicy 130g x 32",
-"krName": "오뚜기 카레 면 매운 130g",
+"krName": "오뚜기 카레 면 매운 130g x32",
 "vendor": "",
 "cat": "RAMYUN (SOUP)",
 "perBox": 32,
@@ -2621,7 +2621,7 @@
 },
 {
 "name": "NONGSHIM NEOGURI ANGRY RTA MULTI 121g x 40",
-"krName": "농심 너구리 앵그리 멀티 121g",
+"krName": "농심 너구리 앵그리 멀티 121g x40",
 "vendor": "",
 "cat": "RAMYUN (SOUP)",
 "perBox": 40,
@@ -2631,7 +2631,7 @@
 },
 {
 "name": "BINGGRAE Juicycool plum 200ml x 24",
-"krName": "빙그레 쥬시쿨 자두 200ml",
+"krName": "빙그레 쥬시쿨 자두 200ml x24",
 "vendor": "",
 "cat": "BEVERAGE",
 "perBox": 24,
@@ -2641,7 +2641,7 @@
 },
 {
 "name": "NONGSHIM ANSUNG TANGMYUN SOONHAGUN MULTI 125g x 40",
-"krName": "농심 안성탕면 순한맛 멀티 125g",
+"krName": "농심 안성탕면 순한맛 멀티 125g x40",
 "vendor": "",
 "cat": "RAMYUN (SOUP)",
 "perBox": 40,
