@@ -43,27 +43,27 @@ window.SUPA_CONFIG = { url: "https://hwodtlumxukifaogrwqw.supabase.co", anonKey:
   .tile .v{font-size:22px;font-weight:700;letter-spacing:-.5px} .tile .u{font-size:12px;color:var(--muted);margin-top:3px}
   .v.pos{color:var(--good-text)} .v.neg{color:var(--critical)}
   .tablewrap{overflow-x:auto;max-height:70vh;border:1px solid var(--border);border-radius:12px;background:var(--card)}
-  table{border-collapse:collapse;width:100%;min-width:1180px;font-variant-numeric:tabular-nums}
-  th,td{padding:5px 4px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap}
+  table{border-collapse:collapse;width:100%;min-width:1080px;font-variant-numeric:tabular-nums}
+  th,td{padding:4px 3px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap}
   th{background:var(--surface-1);color:var(--text-secondary);font-size:11px;font-weight:700;position:sticky;top:0;z-index:2;cursor:pointer;user-select:none;line-height:1.2}
   th.l,td.l{text-align:left} th:first-child,td:first-child{padding-left:14px}
   tbody tr:hover{background:color-mix(in srgb,var(--brand) 6%,transparent)}
   td input{width:100%;min-width:40px;background:transparent;border:1px solid transparent;border-radius:6px;padding:4px 4px;font-size:12px;color:var(--text-primary);font-family:inherit;text-align:right;font-variant-numeric:tabular-nums}
-  td input.name{display:block;text-align:left;min-width:360px;width:360px;font-weight:600}
-  td input.krname{display:block;margin-top:2px;text-align:left;min-width:360px;width:360px;font-size:11.5px;font-weight:500;color:var(--text-secondary)}
+  td input.name{display:block;text-align:left;min-width:250px;width:250px;font-weight:600}
+  td input.krname{display:block;margin-top:2px;text-align:left;min-width:250px;width:250px;font-size:11.5px;font-weight:500;color:var(--text-secondary)}
   td input.kr{font-weight:700;color:var(--brand);background:color-mix(in srgb,var(--brand) 6%,transparent);border-color:var(--border)}
-  td input.krvendor{text-align:left;min-width:84px;border:1px solid var(--border);background:var(--surface-1);color:var(--text-primary);border-style:dashed}
+  td input.krvendor{text-align:left;min-width:60px;width:64px;border:1px solid var(--border);background:var(--surface-1);color:var(--text-primary);border-style:dashed}
   td input.krvendor::placeholder{color:var(--text-secondary);opacity:.7}
   td input.krvendor:not(:placeholder-shown){border-style:solid;background:color-mix(in srgb,var(--brand) 5%,transparent);font-weight:600}
   td input.url{text-align:left;min-width:60px;color:var(--text-secondary)}
-  td input.cbm{min-width:82px;width:82px}
+  td input.cbm{min-width:72px;width:72px}
   td input:hover{border-color:var(--grid)} td input:focus{border-color:var(--brand);background:var(--surface-1)}
   td.calc{font-weight:600} td.calc.sub{color:var(--text-secondary);font-weight:500}
   .na{color:var(--muted);font-weight:500} .pos{color:var(--good-text)} .neg{color:var(--critical)}
   .chk{width:18px;height:18px;accent-color:var(--brand)}
   .del{color:var(--critical);border:none;background:transparent;font-size:15px;padding:2px 6px;cursor:pointer}
   tfoot td{font-weight:700;background:var(--surface-1);border-top:2px solid var(--baseline);position:sticky;bottom:0}
-  .bar-row{display:grid;grid-template-columns:minmax(0,1fr) 300px 56px;align-items:center;gap:12px;margin:7px 0}
+  .bar-row{display:grid;grid-template-columns:minmax(0,460px) minmax(120px,1fr) 52px;align-items:center;gap:12px;margin:7px 0}
   .bar-row .nm{font-size:12px;color:var(--text-secondary);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .bar-track{position:relative;height:20px;background:var(--surface-1);border-radius:5px;overflow:hidden}
   .bar-fill{position:absolute;top:0;bottom:0;left:0;border-radius:5px;background:var(--pos)} .bar-fill.neg{background:var(--neg)}
@@ -272,7 +272,7 @@ function restoreFocus(f){if(!f)return;const el=$('#tbody [data-i="'+f.i+'"][data
 function visibleIdx(){return rows.map((r,i)=>i).filter(i=>(!catF||(rows[i].cat||'')===catF)&&(!filter||(rows[i].name||'').toLowerCase().includes(filter)||(rows[i].krName||'').toLowerCase().includes(filter)));}
 function rowHTML(r,i){const c=calc(r);const na=v=>c.entered?v:'<span class="na">–</span>';const pn=v=>v>=0?'pos':'neg';
   return '<td class="l"><input class="name" data-i="'+i+'" data-k="name" value="'+escA(r.name)+'" placeholder="제품명(영문)"><input class="krname" data-i="'+i+'" data-k="krName" value="'+escA(r.krName)+'" placeholder="한글명"></td>'+
-  '<td><input class="vendor" data-i="'+i+'" data-k="vendor" value="'+escA(r.vendor||'')+'" placeholder="거래처" style="width:70px"></td>'+
+  '<td><input class="vendor" data-i="'+i+'" data-k="vendor" value="'+escA(r.vendor||'')+'" placeholder="공급사" style="width:58px"></td>'+
   '<td><input type="number" step="1" data-i="'+i+'" data-k="perBox" value="'+r.perBox+'"></td>'+
   '<td><input type="number" step="0.01" data-i="'+i+'" data-k="phCost" value="'+r.phCost+'"></td>'+
   '<td><input class="kr" type="number" step="1" data-i="'+i+'" data-k="krPrice" value="'+(r.krPrice||'')+'" placeholder="박스가 입력"></td>'+
