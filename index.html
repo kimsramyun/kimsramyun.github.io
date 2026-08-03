@@ -339,7 +339,7 @@ $('#tbody').addEventListener('input',e=>{const el=e.target,i=+el.dataset.i,k=el.
   if(k==='krVendor'){rows[i].krVendor=el.value;return;}
   rows[i][k]=parseFloat(el.value)||0;updateCalc(tr,i);});
 $('#tbody').addEventListener('change',e=>{const el=e.target,i=+el.dataset.i,k=el.dataset.k;if(k==='name'&&rows[i]){rows[i].perBox=perBoxFromName(rows[i].name)||rows[i].perBox;render();}});
-$('#tbody').addEventListener('click',e=>{if(e.target.dataset.del!=null){rows.splice(+e.target.dataset.del,1);render();}});
+$('#tbody').addEventListener('click',e=>{if(e.target.dataset.del==null)return;const i=+e.target.dataset.del,r=rows[i];if(!r)return;if(!r._src||!window.hideProduct){rows.splice(i,1);render();return;}if(!confirm('\u300c'+(r.krName||r.name)+'\u300d\uc744(\ub97c) \ubaa9\ub85d\uc5d0\uc11c \uc81c\uc678\ud560\uae4c\uc694?\n\n\uc0ad\uc81c\uac00 \uc544\ub2c8\ub77c \uc228\uae40\uc785\ub2c8\ub2e4. \ub370\uc774\ud130\ub294 \uc11c\ubc84\uc5d0 \ub0a8\uace0, \uc0c8\ub85c\uace0\uce68\ud574\ub3c4 \ub2e4\uc2dc \ub098\ud0c0\ub098\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.'))return;window.hideProduct(r).then(res=>{if(res&&res.error){alert('\uc81c\uc678 \uc2e4\ud328: '+res.error.message);return;}rows.splice(i,1);render();}).catch(err=>{alert(err.message);});});
 ['exRate','vatRate','shipCbm','cardDef'].forEach(id=>$('#'+id).addEventListener('input',()=>{$('#exHint').textContent='1 PHP = '+fmt(S.exRate(),2)+' KRW';render();}));
 $('#search').addEventListener('input',e=>{filter=e.target.value.trim().toLowerCase();render();});
 $('#catFilter').addEventListener('change',e=>{catF=e.target.value;render();});
@@ -807,6 +807,14 @@ render();
       sb.from('work_overrides').upsert({user_id:ME.id,product_key:r._key,kr_price:r.krPrice,kr_vendor:r.krVendor||'',card_pct:r.cardPct,vat_refund:!!r.vatRefund,qty:r.qty,ph_local:r.phLocal,updated_at:new Date().toISOString()}).then(function(){});
     }
   }
+  /* 목록에서 제외 — 실제 삭제가 아니라 products.active=false 로 감춘다.
+     ✕ 버튼이 화면에서만 지우고 새로고침하면 되살아나던 문제 해결. */
+  window.hideProduct=function(r){
+    if(!ME) return Promise.reject(new Error('로그인이 필요합니다.'));
+    if(r._src!=='master') return Promise.reject(new Error('이 행은 아직 서버에 없어 화면에서만 제거됩니다.'));
+    if(ROLE!=='admin') return Promise.reject(new Error('관리자만 목록에서 제외할 수 있습니다.'));
+    return sb.from('products').update({active:false,updated_at:new Date().toISOString()}).eq('key',r._key);
+  };
   function saveMasterField(r){ // 관리자만
     if(ROLE!=='admin'||r._src!=='master') return;
     sb.from('products').update({name:r.name,kr_name:r.krName,vendor:r.vendor,kr_vendor:r.krVendor||'',cat:r.cat,per_box:r.perBox,ph_cost:r.phCost,cbm:r.cbm,updated_by:ME.id,updated_at:new Date().toISOString()}).eq('key',r._key).then(function(){});
@@ -864,4 +872,3 @@ render();
 
 </body>
 </html>
-서버데이터를바인딩에도대입—화면이내장기본값만그리던버그수정
