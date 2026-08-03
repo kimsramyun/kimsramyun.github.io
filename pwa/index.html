@@ -760,6 +760,10 @@ render();
                     .concat(customs.map(rowFromCustom));
       window.DEFAULT_ROWS=master;
       window.rows=mine;
+      /* 화면이 쓰는 최상위 let rows 바인딩에도 반드시 대입할 것.
+         window.rows 와 let rows 는 별개 바인딩이라, 여기 빠지면 서버 데이터를 받고도
+         화면은 계속 HTML 내장 기본값을 그린다. */
+      rows=mine;
       if(st){ if($('#exRate'))$('#exRate').value=st.ex_rate; if($('#vatRate'))$('#vatRate').value=st.vat; if($('#shipCbm'))$('#shipCbm').value=st.ship_cbm; if($('#cardDef'))$('#cardDef').value=st.card_def; }
       window.sortKey=null;
       if(window.render) window.render();
@@ -860,3 +864,4 @@ render();
 
 </body>
 </html>
+서버데이터를바인딩에도대입—화면이내장기본값만그리던버그수정
