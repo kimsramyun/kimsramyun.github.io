@@ -520,6 +520,9 @@ render();
       +'<button id="ub_sdel" title="선택한 시리즈 삭제" style="padding:4px 8px;border:1px solid #755;border-radius:7px;background:#331f1f;color:#fcc;cursor:pointer">🗑</button>'
       +'<input id="ub_sname" placeholder="새 시리즈 이름" style="padding:4px 8px;border:1px solid #555;border-radius:7px;background:#2a2a28;color:#fff;width:140px">'
       +'<button id="ub_ssave" style="padding:4px 9px;border:1px solid #5a5;border-radius:7px;background:#1f3a1f;color:#cfc;cursor:pointer">💾 저장</button>'
+      +'<button id="ub_sexport" title="모든 시리즈를 JSON 파일로 내려받기" style="padding:4px 8px;border:1px solid #557;border-radius:7px;background:#242433;color:#cdf;cursor:pointer">⬇ 백업</button>'
+      +'<button id="ub_simport" title="JSON 백업 파일에서 시리즈 복원" style="padding:4px 8px;border:1px solid #557;border-radius:7px;background:#242433;color:#cdf;cursor:pointer">⬆ 복원</button>'
+      +'<input type="file" id="ub_sfile" accept="application/json,.json" style="display:none">'
       +'<span id="ub_smsg" style="opacity:.9;color:#9ec"></span>'
       +'</div>'
       +'<button id="ub_seed" style="display:none;padding:4px 10px;border:1px solid #6a5;border-radius:7px;background:#1f3a1f;color:#cfc;cursor:pointer">🗂 마스터 시드</button>'
@@ -532,17 +535,87 @@ render();
     $('#ub_sload').onclick=function(){var id=$('#ub_series').value;if(!id){smsg('불러올 시리즈를 선택하세요');return;}loadSeries(id);};
     $('#ub_sdel').onclick=function(){var sel=$('#ub_series'),id=sel.value;if(!id){smsg('삭제할 시리즈를 선택하세요');return;}deleteSeries(id,sel.options[sel.selectedIndex].textContent);};
     $('#ub_sname').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('#ub_ssave').click();}});
+    $('#ub_sexport').onclick=exportSeries;
+    $('#ub_simport').onclick=function(){$('#ub_sfile').click();};
+    $('#ub_sfile').onchange=function(e){importSeries(e.target.files&&e.target.files[0]);e.target.value='';};
   }
 
   // ---------- 시리즈(스냅샷) 저장/불러오기 (사용자별) ----------
+  // ---------- 로컬 백업(안전망): 서버 장애·데이터 유실 대비 ----------
+  var LB_KEY='kims_series_backup_v1', LB_MAX=12;
+  function lbGet(){try{return JSON.parse(localStorage.getItem(LB_KEY))||{};}catch(e){return {};}}
+  function lbSet(o){try{localStorage.setItem(LB_KEY,JSON.stringify(o));return true;}catch(e){return false;}}
+  function lbPut(name,data){
+    if(!name||!data)return;
+    var o=lbGet(); o[name]={name:name,data:data,savedAt:new Date().toISOString()};
+    var ks=Object.keys(o).sort(function(a,b){return String(o[b].savedAt||'').localeCompare(String(o[a].savedAt||''));});
+    while(ks.length>LB_MAX){delete o[ks.pop()];}
+    if(!lbSet(o)){while(ks.length>1){delete o[ks.pop()];if(lbSet(o))break;}}
+  }
+  function lbCount(){return Object.keys(lbGet()).length;}
+  function lbBanner(n){
+    var box=$('#ub_series'); if(!box)return;
+    var w=$('#ub_lbwarn');
+    if(!w){w=document.createElement('span');w.id='ub_lbwarn';w.style.cssText='color:#fd8;margin-left:4px';box.parentNode.insertBefore(w,box.nextSibling);}
+    w.innerHTML='⚠ 서버에 시리즈 없음 · 로컬 백업 '+n+'개 <button id="ub_lbrestore" style="padding:2px 7px;border:1px solid #7a5;border-radius:6px;background:#2a3a1f;color:#dfd;cursor:pointer">복원</button>';
+    $('#ub_lbrestore').onclick=restoreFromLocal;
+  }
+  function upsertSeries(payload,okMsg){
+    sb.from('snapshots').upsert(payload,{onConflict:'user_id,name'}).then(function(r){
+      if(r.error){smsg('복원 실패: '+r.error.message);return;}
+      var w=$('#ub_lbwarn'); if(w)w.remove();
+      loadSeriesList().then(function(){smsg(okMsg);});
+    });
+  }
+  function restoreFromLocal(){
+    if(!ME){smsg('로그인이 필요합니다');return;}
+    var o=lbGet(), ks=Object.keys(o); if(!ks.length){smsg('로컬 백업이 없습니다');return;}
+    if(!confirm('로컬 백업 '+ks.length+'개를 서버로 복원할까요?'))return;
+    smsg('복원 중...');
+    upsertSeries(ks.map(function(k){return {user_id:ME.id,name:k,data:o[k].data,updated_at:new Date().toISOString()};}),'복원 완료: '+ks.length+'개');
+  }
+  function exportSeries(){
+    smsg('백업 만드는 중...');
+    sb.from('snapshots').select('name,data,updated_at').then(function(r){
+      var o=lbGet();
+      (r.data||[]).forEach(function(s){if(s.data)o[s.name]={name:s.name,data:s.data,savedAt:s.updated_at};});
+      var ks=Object.keys(o);
+      if(!ks.length){smsg('백업할 시리즈가 없습니다');return;}
+      var blob=new Blob([JSON.stringify({app:'kims-ramyun',type:'series-backup',v:1,exportedAt:new Date().toISOString(),series:o},null,1)],{type:'application/json'});
+      var a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+      a.download='kims-series-backup-'+new Date().toISOString().slice(0,10)+'.json';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){URL.revokeObjectURL(a.href);},2000);
+      smsg('백업 파일 저장됨 ('+ks.length+'개)');
+    });
+  }
+  function importSeries(file){
+    if(!file)return;
+    var fr=new FileReader();
+    fr.onload=function(){
+      var j; try{j=JSON.parse(fr.result);}catch(e){smsg('파일을 읽지 못했습니다');return;}
+      var s=j&&j.series, ks=s?Object.keys(s):[];
+      if(!ks.length){smsg('시리즈가 없는 파일입니다');return;}
+      if(!ME){smsg('로그인이 필요합니다');return;}
+      if(!confirm('시리즈 '+ks.length+'개를 서버에 복원할까요? 같은 이름은 덮어씁니다.'))return;
+      smsg('복원 중...');
+      ks.forEach(function(k){lbPut(k,(s[k]&&s[k].data)||s[k]);});
+      upsertSeries(ks.map(function(k){return {user_id:ME.id,name:k,data:(s[k]&&s[k].data)||s[k],updated_at:new Date().toISOString()};}),'복원 완료: '+ks.length+'개');
+    };
+    fr.readAsText(file);
+  }
   function smsg(t){var m=$('#ub_smsg');if(m){m.textContent=t||'';if(t)setTimeout(function(){if(m.textContent===t)m.textContent='';},4000);}}
   function loadSeriesList(keep){
-    return sb.from('snapshots').select('id,name,updated_at').order('updated_at',{ascending:false}).then(function(r){
+    return sb.from('snapshots').select('id,name,updated_at,data').order('updated_at',{ascending:false}).then(function(r){
       var box=$('#ub_series');if(!box)return;
       var cur=(keep!=null)?keep:box.value;
+      var list=r.data||[];
       var opts='<option value="">— 저장된 시리즈 —</option>';
-      (r.data||[]).forEach(function(s){opts+='<option value="'+s.id+'">'+String(s.name).replace(/</g,'&lt;')+'</option>';});
+      list.forEach(function(s){opts+='<option value="'+s.id+'">'+String(s.name).replace(/</g,'&lt;')+'</option>';});
       box.innerHTML=opts; if(cur)box.value=cur;
+      list.forEach(function(s){if(s.data)lbPut(s.name,s.data);});           /* 서버 → 로컬 자동 미러링 */
+      var w=$('#ub_lbwarn'); if(w)w.remove();
+      if(!list.length && lbCount()>0) lbBanner(lbCount());                   /* 서버가 비었으면 복원 안내 */
     });
   }
   function saveSeries(name){
@@ -552,7 +625,7 @@ render();
     smsg('저장 중...');
     sb.from('snapshots').upsert({user_id:ME.id,name:name,data:state,updated_at:new Date().toISOString()},{onConflict:'user_id,name'}).then(function(r){
       if(r.error){smsg('저장 실패: '+r.error.message);return;}
-      $('#ub_sname').value='';
+      $('#ub_sname').value=''; lbPut(name,state);
       loadSeriesList().then(function(){var box=$('#ub_series');if(box){for(var i=0;i<box.options.length;i++){if(box.options[i].textContent===name){box.selectedIndex=i;break;}}}smsg('저장됨: '+name);});
     });
   }
@@ -560,6 +633,7 @@ render();
     smsg('불러오는 중...');
     sb.from('snapshots').select('name,data').eq('id',id).maybeSingle().then(function(r){
       if(r.error||!r.data){smsg('불러오기 실패');return;}
+      lbPut(r.data.name,r.data.data);
       var ok=window.__setState?window.__setState(r.data.data):false;
       smsg(ok?('불러옴: '+r.data.name):'복원 실패');
     });
